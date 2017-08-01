@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `order_status_log`.
  */
-class m170731_094602_create_order_status_log_table extends Migration
+class m170801_090115_create_order_status_log_table extends Migration
 {
     /**
      * @inheritdoc
@@ -19,13 +19,42 @@ class m170731_094602_create_order_status_log_table extends Migration
             'order_id' => $this->integer(),
             'status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') NOT NULL DEFAULT 'Новый'",
         ]);
+
+        $this->createIndex(
+            'idx-order_status_log-order_id',
+            'order_status_log',
+            'order_id'
+        );
+
+        $this->addForeignKey(
+            'fk-order_status_log-order',
+            'order_status_log',
+            'order_id',
+            'user',
+            'id',
+            'CASCADE',
+            'CASCADE'
+        );
+
     }
+
 
     /**
      * @inheritdoc
      */
+
     public function down()
     {
+        $this->dropForeignKey(
+            'fk-order_status_log-order',
+            'order_status_log'
+        );
+
+        $this->dropIndex(
+            'idx-order_status_log-order_id',
+            'order_status_log'
+        );
+
         $this->dropTable('order_status_log');
     }
 }
