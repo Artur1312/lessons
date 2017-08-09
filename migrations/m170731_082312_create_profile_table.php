@@ -21,7 +21,8 @@ class m170731_082312_create_profile_table extends Migration
             'city' => $this->string(178)->notNull(),
             'ip_address' => $this->integer()->defaultValue(0),
             'age' => $this->integer()->notNull(),
-            'gender' => "ENUM('Мужской', 'Женский') NOT NULL",
+            'gender' => $this->char(7)->notNull(),
+//            'gender' => "ENUM('Мужской', 'Женский') NOT NULL",
             'dob' => $this->date()->notNull(), //date of birth
             'activity' => $this->string(255),
             'interests' => $this->string(255),

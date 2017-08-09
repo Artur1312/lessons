@@ -17,7 +17,8 @@ class m170731_071818_create_payout_table extends Migration
             'payout_type_id' => $this->integer()->notNull(),
             'total' => $this->integer()->defaultValue(0),
             'comment' => $this->string(255),
-            'status' => "ENUM('Выплачено', 'Отменено') NOT NULL DEFAULT 'Выплачено'",
+            'status' => $this->char(9)->notNull(),
+//            'status' => "ENUM('Выплачено', 'Отменено') NOT NULL DEFAULT 'Выплачено'",
         ]);
 
         // add index for column `payout_type_id`

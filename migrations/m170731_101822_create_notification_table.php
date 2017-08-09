@@ -18,7 +18,8 @@ class m170731_101822_create_notification_table extends Migration
             'creator_id' => $this->integer(),
             'client_id' => $this->integer(),
             'text' => $this->text()->notNull(),
-            'status' => "ENUM('Новое', 'Выполнено') NOT NULL DEFAULT 'Новое'",
+            'status' => $this->char(9)->notNull(),
+//            'status' => "ENUM('Новое', 'Выполнено') NOT NULL DEFAULT 'Новое'",
             'is_removed' => "tinyint(1) NOT NULL DEFAULT 0"
         ]);
 

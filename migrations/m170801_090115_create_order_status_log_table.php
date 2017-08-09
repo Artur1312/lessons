@@ -17,7 +17,8 @@ class m170801_090115_create_order_status_log_table extends Migration
             'create_time' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
             'creator_id' => $this->integer(),
             'order_id' => $this->integer(),
-            'status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') NOT NULL DEFAULT 'Новый'",
+            'status' => $this->char(14)->notNull()->defaultValue('Новый'),
+//            'status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') NOT NULL DEFAULT 'Новый'",
         ]);
 
         $this->createIndex(

@@ -32,7 +32,8 @@ class m170801_090114_create_order_info_table extends Migration
             'demo_dislike' => $this->integer(),
             'demo_absent' => $this->integer(),
             'demo_reject' => $this->integer(),
-            'order_status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') DEFAULT 'Новый'",
+            'order_status' => $this->char(14)->notNull()->defaultValue('Новый'),
+//            'order_status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') DEFAULT 'Новый'",
             'order_comment' => $this->string(255),
 
         ]);
