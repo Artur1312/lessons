@@ -44,11 +44,23 @@ AppAsset::register($this);
                         <li><a href="<?=  Url::toRoute(['site/contact'])?>">Contact</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Dropdown
+                                Tools
                                 <b class="caret"></b>
                             </a>
                         <ul class="dropdown-menu">
-                           <li><a href="<?=  Url::toRoute(['site/contact'])?>">Contact</a></li>
+
+                           <li><a href="<?=  Url::toRoute(['action/index'])?>">Actions</a></li>
+                            <li><a href="<?=  Url::toRoute(['bank/index'])?>">Banks</a></li>
+                            <li><a href="<?=  Url::toRoute(['currency/index'])?>">Currency</a></li>
+                            <li><a href="<?=  Url::toRoute(['course/index'])?>">Courses</a></li>
+                            <li><a href="<?=  Url::toRoute(['lead-landing/index'])?>">Lead Landing</a></li>
+                            <li><a href="<?=  Url::toRoute(['lead-form/index'])?>">Lead Form</a></li>
+                            <li><a href="<?=  Url::toRoute(['lead-channel/index'])?>">Lead Channel</a></li>
+                            <li><a href="<?=  Url::toRoute(['payment-type/index'])?>">Payment Type</a></li>
+                            <li><a href="<?=  Url::toRoute(['payout-type/index'])?>">Payout Type</a></li>
+                            <li><a href="<?=  Url::toRoute(['product/index'])?>">Product</a></li>
+                            <li><a href="<?=  Url::toRoute(['tutor-type/index'])?>">Tutor Type</a></li>
+
                         </ul>
 
                         </li>
