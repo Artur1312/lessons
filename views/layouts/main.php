@@ -2,6 +2,7 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+/* @var $profile /app/models/Profile */
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -9,6 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\Url;
+use app\models\Profile;
 
 AppAsset::register($this);
 ?>
@@ -71,6 +73,7 @@ AppAsset::register($this);
                             </ul>
 
                         </li>
+                        <li> <a href="<?= Url::toRoute(['/profile/view','id'=>Yii::$app->user->identity->id]);?>" title="View" aria-label="View"><span class="glyphicon glyphicon-eye-open"></span></a></li>
                         <li><a href="<?= Url::toRoute(['auth/logout'])?>">Logout(<?=Yii::$app->user->identity->username?>)</a></li>
                     <?php endif; ?>
                 </ul>
