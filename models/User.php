@@ -168,7 +168,7 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProfiles()
+    public function getProfile()
     {
         return $this->hasMany(Profile::className(), ['user_id' => 'id']);
     }
@@ -196,6 +196,9 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     //save-create method for signup form, where your data save to database.
+
+
+
 
     public function create()
     {

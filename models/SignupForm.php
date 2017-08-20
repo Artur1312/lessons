@@ -9,7 +9,10 @@
 namespace app\models;
 
 
+use Yii;
+use yii\base\Exception;
 use yii\base\Model;
+use app\models\User;
 
 class SignupForm extends Model
 {
@@ -41,11 +44,58 @@ class SignupForm extends Model
             $user->email = $this->email;
             $user->setPassword($this->password);
 
+
             return $user->create();
         }
         return null;
 
     }
 
+    public function transaction()
+    {
+
+    }
+
+
+
+
+//    public function signup()
+//    {
+//        $user = new User();
+//        $profile = new Profile();
+//        $valid = $user->validate();
+//        $valid = $profile->validate() && $valid;
+//
+//        if ($valid) {
+//        $transaction = User::getDb()->beginTransaction();
+//
+//        try {
+//                $user->save(false);
+//                $profile->user_id = $user->primaryKey;
+//                $profile->save(false);
+//                $transaction->commit();
+//        } catch(Exception $e) {
+//
+//            $transaction->rollback();
+//            }
+//        }
+//    }
+//    public function signup()
+//{
+//    $connection = User::getDb();
+//        $transaction = $connection->beginTransaction();
+//            try {
+//        $user = $connection->createCommand()->insert('user', [
+//        'username' => 'arjunphp',
+//        'email' => 'arjunph@gmail.com',
+//        ])->execute();
+//        $connection->createCommand()->insert('profile', ['city' => "trap",
+//        'user_id' => $user->id
+//        ])->execute();
+//        $transaction->commit();
+//        } catch(Exception $e) {
+//            $transaction->rollback();
+//         }
+//    }
 
 }
