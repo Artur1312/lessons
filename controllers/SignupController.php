@@ -22,9 +22,14 @@ class SignupController extends Controller
         if(Yii::$app->request->post())
         {
             $model->load(Yii::$app->request->post());
-            if($model->signup())
+            if($user = $model->signup())
             {
-                return $this->redirect(['auth/login']);
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                } else {
+                    return $this->redirect(['auth/login']);
+                }
+
             }
         }
         return $this->render('register', [

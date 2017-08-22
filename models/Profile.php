@@ -13,7 +13,7 @@ use Yii;
  * @property integer $phone
  * @property string $country
  * @property string $city
- * @property integer $ip_address
+ * @property string $ip_address
  * @property integer $age
  * @property string $gender
  * @property string $dob
@@ -40,10 +40,10 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'skype', 'phone', 'country', 'city', 'age', 'gender', 'dob'], 'required'],
-            [['user_id', 'phone', 'ip_address', 'age', 'wallet_id'], 'integer'],
+            [['user_id'], 'required'],
+            [['user_id', 'phone', 'age', 'wallet_id'], 'integer'],
             [['dob'], 'safe'],
-            [['skype', 'activity', 'interests'], 'string', 'max' => 255],
+            [['skype', 'ip_address', 'activity', 'interests'], 'string', 'max' => 255],
             [['country'], 'string', 'max' => 38],
             [['city'], 'string', 'max' => 178],
             [['gender'], 'string', 'max' => 7],

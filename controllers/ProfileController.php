@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use Yii;
 use app\models\Profile;
 use app\search_models\ProfileSearch;
@@ -61,8 +62,11 @@ class ProfileController extends Controller
      */
     public function actionView($id)
     {
+        $user = new User();
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'user' => $user
         ]);
     }
 
