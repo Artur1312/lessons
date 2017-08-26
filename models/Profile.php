@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\modules\wallet\models\Wallet;
 use Yii;
 
 /**
