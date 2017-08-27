@@ -3,9 +3,10 @@
 namespace app\controllers;
 
 use app\models\User;
+use app\models\CommentForm;
 use Yii;
 use app\models\Profile;
-use app\search_models\ProfileSearch;
+//use app\search_models\ProfileSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -49,8 +50,9 @@ class ProfileController extends Controller
     {
 
         $profiles = Profile::find()->orderBy('id asc')->all();
+
         return $this->render('index', [
-            'profiles' => $profiles
+            'profiles' => $profiles,
         ]);
     }
 
@@ -62,11 +64,15 @@ class ProfileController extends Controller
      */
     public function actionView($id)
     {
-        $user = new User();
+        $profile = Profile::findOne($id);
 
+        $comments = $profile->getProfileComments();
+        $commentForm = new CommentForm;
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'user' => $user
+            'comments' => $comments,
+            'profile' => $profile,
+            'commentForm' => $commentForm
         ]);
     }
 
@@ -135,4 +141,21 @@ class ProfileController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public function actionComment($id)
+    {
+        $model = new CommentForm();
+
+        if(Yii::$app->request->isPost)
+        {
+            $model->load(Yii::$app->request->post());
+
+            if($model->saveComment($id))
+            {
+                return $this->redirect(['profile/view', 'id'=>$id]);
+//                return var_dump($model);
+            }
+        }
+    }
+
 }

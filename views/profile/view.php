@@ -44,5 +44,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'wallet_id',
         ],
     ]) ?>
+    <div>
+        <p></p>
+    </div>
+
+    <?= $this->render('comment\comment',
+        [
+            'profile' => $profile,
+            'comments' => $comments,
+            'commentForm' => $commentForm
+        ]);  ?>
 
 </div>

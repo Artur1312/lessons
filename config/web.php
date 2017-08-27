@@ -35,9 +35,6 @@ $config = [
         'tutor_type' => [
             'class' => 'app\modules\tutor_type\TutorTypeModule',
         ],
-        'comment' => [
-            'class' => 'app\modules\comment\CommentModule',
-        ],
         'payout' => [
             'class' => 'app\modules\payout\PayoutModule',
         ],

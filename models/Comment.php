@@ -1,8 +1,7 @@
 <?php
 
-namespace app\modules\comment\models;
+namespace app\models;
 
-use app\models\User;
 use app\modules\order_info\models\OrderInfo;
 use Yii;
 
@@ -17,9 +16,7 @@ use Yii;
  * @property integer $is_removed
  *
  * @property User $client
- * @property CommentOrderInfo[] $commentOrderInfos
  * @property OrderInfo[] $orderInfos
- * @property CommentUser[] $commentUsers
  * @property User[] $users
  */
 class Comment extends \yii\db\ActiveRecord
@@ -69,13 +66,6 @@ class Comment extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'client_id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCommentOrderInfos()
-    {
-        return $this->hasMany(CommentOrderInfo::className(), ['comment_id' => 'id']);
-    }
 
     /**
      * @return \yii\db\ActiveQuery
@@ -85,12 +75,9 @@ class Comment extends \yii\db\ActiveRecord
         return $this->hasMany(OrderInfo::className(), ['id' => 'order_info_id'])->viaTable('comment_order_info', ['comment_id' => 'id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCommentUsers()
+    public function getDate()
     {
-        return $this->hasMany(CommentUser::className(), ['comment_id' => 'id']);
+        return Yii::$app->formatter->asDatetime('now',$this->date);
     }
 
     /**
@@ -99,5 +86,10 @@ class Comment extends \yii\db\ActiveRecord
     public function getUsers()
     {
         return $this->hasMany(User::className(), ['id' => 'user_id'])->viaTable('comment_user', ['comment_id' => 'id']);
+    }
+
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'client_id']);
     }
 }

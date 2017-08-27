@@ -2,8 +2,10 @@
 
 namespace app\models;
 
+
 use app\modules\wallet\models\Wallet;
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "profile".
@@ -25,7 +27,7 @@ use Yii;
  * @property User $user
  * @property Wallet $wallet
  */
-class Profile extends \yii\db\ActiveRecord
+class Profile extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -87,8 +89,27 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+
+    public function getProfileComments()
+    {
+        return $this->getComments()->where(['is_removed'=>'0'])->all();
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getWallet()
     {
         return $this->hasOne(Wallet::className(), ['id' => 'wallet_id']);
     }
+
+
+    public function getComments()
+    {
+        return $this->hasMany(Comment::className(), ['profile_id' => 'id']);
+    }
+
+
+
+
+
 }

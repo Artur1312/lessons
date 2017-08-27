@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\modules\comment\models\Comment;
+use app\models\Comment;
 use app\modules\lead_info\models\LeadInfo;
 use app\modules\order_info\models\OrderInfo;
 use app\modules\order_info\models\OrderStatusLog;
@@ -179,7 +179,6 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
 
-
     public static function findByUsername($username)
     {
         return User::find()->where(['username'=>$username])->one();
@@ -203,11 +202,14 @@ class User extends ActiveRecord implements IdentityInterface
     //save-create method for signup form, where your data save to database.
 
 
-
-
     public function create()
     {
         return $this->save(false);
+    }
+
+    public function getProfileComments()
+    {
+        return $this->getComments()->where(['is_removed'=>'0'])->all();
     }
 
 }

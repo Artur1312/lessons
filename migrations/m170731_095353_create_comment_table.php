@@ -17,14 +17,22 @@ class m170731_095353_create_comment_table extends Migration
             'create_time' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
             'creator_id' => $this->integer(),
             'client_id' => $this->integer(),
+            'profile_id' => $this->integer(),
             'text' => $this->text()->notNull(),
+            'date'=>$this->dateTime(),
             'is_removed' => "tinyint(1) NOT NULL DEFAULT 0"
         ]);
 
         $this->createIndex(
-            'idx-comment-client_id',
+        'idx-comment-client_id',
+        'comment',
+        'client_id'
+    );
+
+        $this->createIndex(
+            'idx-comment-profile_id',
             'comment',
-            'client_id'
+            'profile_id'
         );
 
         $this->addForeignKey(
@@ -38,6 +46,16 @@ class m170731_095353_create_comment_table extends Migration
 
         );
 
+        $this->addForeignKey(
+            'fk-comment-profile',
+            'comment',
+            'profile_id',
+            'profile',
+            'id',
+            'CASCADE',
+            'CASCADE'
+
+        );
     }
 
     /**
@@ -46,8 +64,19 @@ class m170731_095353_create_comment_table extends Migration
     public function down()
     {
         $this->dropForeignKey(
+            'fk-comment-profile',
+            'comment'
+        );
+
+        $this->dropForeignKey(
             'fk-comment-client',
             'comment'
+        );
+
+        $this->createIndex(
+            'idx-comment-profile_id',
+            'comment',
+            'profile_id'
         );
 
         $this->dropIndex(
