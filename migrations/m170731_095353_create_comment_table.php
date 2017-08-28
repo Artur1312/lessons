@@ -14,12 +14,11 @@ class m170731_095353_create_comment_table extends Migration
     {
         $this->createTable('comment', [
             'id' => 'pk',
-            'create_time' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
-            'creator_id' => $this->integer(),
             'client_id' => $this->integer(),
             'profile_id' => $this->integer(),
             'text' => $this->text()->notNull(),
-            'date'=>$this->dateTime(),
+            'create_time' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
+//            'date'=>$this->dateTime(),
             'is_removed' => "tinyint(1) NOT NULL DEFAULT 0"
         ]);
 

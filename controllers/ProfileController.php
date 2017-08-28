@@ -150,7 +150,7 @@ class ProfileController extends Controller
         {
             $model->load(Yii::$app->request->post());
 
-            if($model->saveComment($id))
+            if($model->saveProfileComment($id))
             {
                 return $this->redirect(['profile/view', 'id'=>$id]);
 //                return var_dump($model);

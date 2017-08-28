@@ -1,10 +1,12 @@
 <?php use yii\widgets\ActiveForm;  ?>
 
 
+    <h4>3 comments</h4>
+
 <?php
 
 if(!empty($comments)):?>
-    <h4>3 comments</h4>
+
     <?php foreach($comments as $comment):?>
         <div class="bottom-comment"><!--bottom comment-->
 
@@ -18,7 +20,7 @@ if(!empty($comments)):?>
                 <h5><?=$comment->user->username; ?></h5>
 
                 <p class="comment-date">
-                    <?=$comment->getDate(); ?>
+                    <?=$comment->create_time; ?>
                 </p>
 
 

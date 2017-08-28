@@ -4,6 +4,7 @@ namespace app\models;
 
 use app\modules\order_info\models\OrderInfo;
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "comment".
@@ -19,7 +20,7 @@ use Yii;
  * @property OrderInfo[] $orderInfos
  * @property User[] $users
  */
-class Comment extends \yii\db\ActiveRecord
+class Comment extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -75,10 +76,10 @@ class Comment extends \yii\db\ActiveRecord
         return $this->hasMany(OrderInfo::className(), ['id' => 'order_info_id'])->viaTable('comment_order_info', ['comment_id' => 'id']);
     }
 
-    public function getDate()
-    {
-        return Yii::$app->formatter->asDatetime('now',$this->date);
-    }
+//    public function getDate()
+//    {
+//        return Yii::$app->formatter->asDatetime('now',$this->create_time);
+//    }
 
     /**
      * @return \yii\db\ActiveQuery
@@ -91,5 +92,21 @@ class Comment extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'client_id']);
+    }
+
+    public function getCommentProfile()
+    {
+        return $this->hasMany(Profile::className(), ['id' => 'profile_id'])
+            ->viaTable('comment_profile', ['comment_id' => 'id']);
+    }
+
+//    public function getCommentCount()
+//    {
+//        return $this->getProfile()->count();
+//    }
+
+    public function getProfile()
+    {
+        return $this->hasMany(Profile::className(), ['profile_id' => 'id']);
     }
 }
