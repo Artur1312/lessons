@@ -27,11 +27,11 @@ echo '</pre>';
                 <h5><?= $comment->user->username; ?></h5>
 
                 <p class="comment-date">
-<!--                    --><?//=$comment->created_at; ?>
+                    <?=$comment->created_at; ?>
                 </p>
 
 
-<!--                <p class="para">--><?//=$comment->text; ?><!--</p>-->
+                <p class="para"><?=$comment->text; ?></p>
             </div>
         </div>
         <!-- end bottom comment-->

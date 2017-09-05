@@ -15,7 +15,7 @@ use yii\db\ActiveRecord;
  * @property string $text
  * @property integer $is_removed
  *
- * @property User $client
+ * @property User $author
  * @property OrderInfo[] $orderInfos
  * @property User[] $users
  */
@@ -89,7 +89,7 @@ class Comment extends ActiveRecord
 
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id' => 'client_id']);
+        return $this->hasOne(User::className(), ['id' => 'author_id']);
     }
 
     public function getCommentProfile()

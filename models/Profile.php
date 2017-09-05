@@ -105,7 +105,7 @@ class Profile extends ActiveRecord
 
     public function getProfileComment()
     {
-        return $this->hasMany(Profile::className(), ['id' => 'comment_id'])
+        return $this->hasMany(Comment::className(), ['id' => 'comment_id'])
             ->viaTable('comment_profile', ['profile_id' => 'id']);
     }
 
