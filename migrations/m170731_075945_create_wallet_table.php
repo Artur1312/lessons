@@ -76,36 +76,6 @@ class m170731_075945_create_wallet_table extends Migration
      */
     public function down()
     {
-        $this->dropForeignKey(
-            'fk-wallet-currency',
-            'wallet'
-        );
-
-        $this->dropForeignKey(
-            'fk-wallet-bank',
-            'wallet'
-        );
-
-        $this->dropForeignKey(
-            'fk-wallet-payout_type',
-            'wallet'
-        );
-
-        $this->dropIndex(
-            'idx-wallet-currency_id',
-            'wallet'
-        );
-
-        $this->dropIndex(
-            'idx-wallet-bank_id',
-            'wallet'
-        );
-
-        $this->dropIndex(
-            'idx-wallet-payout_type_id',
-            'wallet'
-        );
-
 
         $this->dropTable('wallet');
     }

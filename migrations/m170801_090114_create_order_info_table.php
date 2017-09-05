@@ -116,53 +116,6 @@ class m170801_090114_create_order_info_table extends Migration
      */
     public function down()
     {
-        //drop foreign keys from table 'order_info'
-
-        $this->dropForeignKey(
-            'fk-order_info-tutor_type',
-            'order_info'
-        );
-
-        $this->dropForeignKey(
-            'fk-order_info-course',
-            'order_info'
-        );
-
-        $this->dropForeignKey(
-            'fk-order_info-product',
-            'order_info'
-        );
-
-        $this->dropForeignKey(
-            'fk-order_info-client',
-            'order_info'
-        );
-
-        //end dropping
-        //drop indexes from table 'order_info'
-
-        $this->dropIndex(
-            'idx-order_info-tutor_type_id',
-            'order_info'
-        );
-
-        $this->dropIndex(
-            'idx-order_info-product_id',
-            'order_info'
-        );
-
-        $this->dropIndex(
-            'idx-order_info-course_id',
-            'order_info'
-        );
-
-        $this->dropIndex(
-            'idx-order_info-client_id',
-            'order_info'
-        );
-
-        //end dropping
-        //drop table itself
 
         $this->dropTable('order_info');
     }

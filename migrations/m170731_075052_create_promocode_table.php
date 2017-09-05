@@ -42,18 +42,6 @@ class m170731_075052_create_promocode_table extends Migration
      */
     public function down()
     {
-        // drop foreign key for table `payout`
-        $this->dropForeignKey(
-            'fk-promocode-action',
-            'promocode'
-        );
-
-        // drops index for column `payout_type_id`
-        $this->dropIndex(
-            'idx-promocode-action_id',
-            'promocode'
-        );
-
         $this->dropTable('promocode');
     }
 }

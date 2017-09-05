@@ -46,17 +46,6 @@ class m170731_071818_create_payout_table extends Migration
      */
     public function down()
     {
-        // drop foreign key for table `payout`
-        $this->dropForeignKey(
-            'fk-payout-payout_type',
-            'payout'
-        );
-
-        // drops index for column `payout_type_id`
-        $this->dropIndex(
-            'idx-payout-payout_type_id',
-            'payout'
-        );
 
         $this->dropTable('payout');
     }

@@ -155,6 +155,7 @@ class ProfileController extends Controller
                 return $this->redirect(['profile/view', 'id'=>$id]);
 //                return var_dump($model);
             }
+            return $this->redirect(['profile/view', 'id'=>$id]);
         }
     }
 

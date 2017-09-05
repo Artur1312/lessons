@@ -5,10 +5,17 @@
 
 <?php
 
-if(!empty($comments)):?>
 
+if(!empty($comments)): ?>
+
+<?php
+echo '<pre>';
+var_dump($comments);
+echo '</pre>';
+
+?>
     <?php foreach($comments as $comment):?>
-        <div class="bottom-comment"><!--bottom comment-->
+        <div class="bottom-comment">
 
 
             <div class="comment-img">
@@ -17,14 +24,14 @@ if(!empty($comments)):?>
 
             <div class="comment-text">
 
-                <h5><?=$comment->user->username; ?></h5>
+                <h5><?= $comment->user->username; ?></h5>
 
                 <p class="comment-date">
-                    <?=$comment->create_time; ?>
+<!--                    --><?//=$comment->created_at; ?>
                 </p>
 
 
-                <p class="para"><?=$comment->text; ?></p>
+<!--                <p class="para">--><?//=$comment->text; ?><!--</p>-->
             </div>
         </div>
         <!-- end bottom comment-->
@@ -32,7 +39,7 @@ if(!empty($comments)):?>
 
 <?php endif;?>
 <?php if(!Yii::$app->user->isGuest):?>
-    <div class="leave-comment"><!--leave comment-->
+    <div class="leave-comment">
 
         <?php $form = ActiveForm::begin([
             'action'=>['profile/comment', 'id'=>$profile->id],
@@ -47,5 +54,7 @@ if(!empty($comments)):?>
         </div>
 
         <?php ActiveForm::end(); ?>
-    </div><!--end leave comment-->
+    </div>
 <?php endif; ?>
+
+

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab687410040e989582e05dba44a5f97a",
+    "content-hash": "644fc56a12670e9acd54f44aa0ec40d9",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -174,6 +174,83 @@
             }
         },
         {
+            "name": "bower-asset/slimscroll",
+            "version": "v1.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rochal/jQuery-slimScroll.git",
+                "reference": "cf39d364e777ef95574c30c42d3b85cb2bf325d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rochal/jQuery-slimScroll/zipball/cf39d364e777ef95574c30c42d3b85cb2bf325d3",
+                "reference": "cf39d364e777ef95574c30c42d3b85cb2bf325d3",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery.slimscroll.js",
+                    "jquery.slimscroll.min.js"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "description": "slimScroll is a small jQuery plugin that transforms any div into a scrollable area. slimScroll doesn't occupy any visual space as it only appears on a user initiated mouse-over.",
+            "keywords": [
+                "ecosystem:jquery",
+                "jquery-plugin",
+                "scroll",
+                "scrollable",
+                "scrollbar",
+                "scroller",
+                "scrolling",
+                "slimscroll",
+                "ui"
+            ]
+        },
+        {
+            "name": "bower-asset/spinner-canvas",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diiimonn/spinners.git",
+                "reference": "9434921771360c55a5e5ff75a4d5d56cfbce2152"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diiimonn/spinners/zipball/9434921771360c55a5e5ff75a4d5d56cfbce2152",
+                "reference": "9434921771360c55a5e5ff75a4d5d56cfbce2152",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "js/spinners/spinners.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Animate circular indicator using HTML5 canvas and jQuery",
+            "keywords": [
+                "canvas",
+                "jquery",
+                "loader",
+                "spinners"
+            ]
+        },
+        {
             "name": "bower-asset/yii2-pjax",
             "version": "v2.0.6",
             "source": {
@@ -266,6 +343,178 @@
                 "markdown-extra"
             ],
             "time": "2017-07-16T21:13:23+00:00"
+        },
+        {
+            "name": "diiimonn/yii2-asset-slimscroll",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diiimonn/yii2-asset-slimscroll.git",
+                "reference": "cb2f9a171226255be508b3a29e922aaaefc3e7ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diiimonn/yii2-asset-slimscroll/zipball/cb2f9a171226255be508b3a29e922aaaefc3e7ce",
+                "reference": "cb2f9a171226255be508b3a29e922aaaefc3e7ce",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/slimscroll": ">=1.3.3"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "diiimonn\\assets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Dmitriy Gavrilenko",
+                    "email": "diiimonn@gmail.com"
+                }
+            ],
+            "description": "Use slimScroll jquery plugin in your project",
+            "homepage": "https://github.com/diiimonn/yii2-asset-slimscroll",
+            "keywords": [
+                "asset",
+                "extension",
+                "jquery",
+                "plugin",
+                "slimscroll",
+                "yii2"
+            ],
+            "time": "2015-02-10T10:38:42+00:00"
+        },
+        {
+            "name": "diiimonn/yii2-asset-spinner-canvas",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diiimonn/yii2-asset-spinner-canvas.git",
+                "reference": "c65deaac0adfeeae7ab3edd39ec99e21601c1fb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diiimonn/yii2-asset-spinner-canvas/zipball/c65deaac0adfeeae7ab3edd39ec99e21601c1fb3",
+                "reference": "c65deaac0adfeeae7ab3edd39ec99e21601c1fb3",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/spinner-canvas": ">=1.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "diiimonn\\assets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Dmitriy Gavrilenko",
+                    "email": "diiimonn@gmail.com"
+                }
+            ],
+            "description": "Yii2 asset bundle for spinner-canvas bower package",
+            "homepage": "https://github.com/diiimonn/yii2-asset-spinner-canvas",
+            "keywords": [
+                "asset",
+                "canvas",
+                "extension",
+                "jquery",
+                "loader",
+                "spinner",
+                "yii2"
+            ],
+            "time": "2015-02-23T12:19:00+00:00"
+        },
+        {
+            "name": "diiimonn/yii2-widget-checkbox-multiple",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diiimonn/yii2-widget-checkbox-multiple.git",
+                "reference": "55a71879ebda3cd120f0887bad01afb32b1d9054"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diiimonn/yii2-widget-checkbox-multiple/zipball/55a71879ebda3cd120f0887bad01afb32b1d9054",
+                "reference": "55a71879ebda3cd120f0887bad01afb32b1d9054",
+                "shasum": ""
+            },
+            "require": {
+                "diiimonn/yii2-asset-slimscroll": "*",
+                "diiimonn/yii2-widget-spinner-canvas": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "diiimonn\\widgets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Dmitriy Gavrilenko",
+                    "email": "diiimonn@gmail.com"
+                }
+            ],
+            "description": "Input widget to render multiple select box",
+            "homepage": "https://github.com/diiimonn/yii2-widget-checkbox-multiple",
+            "keywords": [
+                "ajax",
+                "checkbox",
+                "extension",
+                "jquery",
+                "multiple",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-04-09T14:15:57+00:00"
+        },
+        {
+            "name": "diiimonn/yii2-widget-spinner-canvas",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diiimonn/yii2-widget-spinner-canvas.git",
+                "reference": "4be95b391873285c113e1352db70063383269e2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diiimonn/yii2-widget-spinner-canvas/zipball/4be95b391873285c113e1352db70063383269e2d",
+                "reference": "4be95b391873285c113e1352db70063383269e2d",
+                "shasum": ""
+            },
+            "require": {
+                "diiimonn/yii2-asset-spinner-canvas": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "diiimonn\\widgets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Dmitriy Gavrilenko",
+                    "email": "diiimonn@gmail.com"
+                }
+            ],
+            "description": "A widget to render canvas with animated loading spinners",
+            "homepage": "https://github.com/diiimonn/yii2-widget-spinner-canvas",
+            "keywords": [
+                "canvas",
+                "extension",
+                "jquery",
+                "loading",
+                "spinner",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-02-23T12:46:45+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -3336,7 +3585,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "diiimonn/yii2-widget-checkbox-multiple": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

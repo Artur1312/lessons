@@ -46,15 +46,6 @@ class m170801_090115_create_order_status_log_table extends Migration
 
     public function down()
     {
-        $this->dropForeignKey(
-            'fk-order_status_log-order',
-            'order_status_log'
-        );
-
-        $this->dropIndex(
-            'idx-order_status_log-order_id',
-            'order_status_log'
-        );
 
         $this->dropTable('order_status_log');
     }

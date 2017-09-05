@@ -92,7 +92,7 @@ class Profile extends ActiveRecord
 
     public function getProfileComments()
     {
-        return $this->getComments()->where(['is_removed'=>'0'])->all();
+        return $this->getProfileComment()->all();
     }
     /**
      * @return \yii\db\ActiveQuery
@@ -112,7 +112,7 @@ class Profile extends ActiveRecord
 
     public function getComments()
     {
-        return $this->hasMany(Comment::className(), ['profile_id' => 'id']);
+        return $this->hasMany(Comment::className(), ['profile_id' => 'id'])->via('profileComment');
     }
 
 

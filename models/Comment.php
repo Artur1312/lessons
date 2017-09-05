@@ -11,8 +11,7 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property string $create_time
- * @property integer $creator_id
- * @property integer $client_id
+ * @property integer $author_id
  * @property string $text
  * @property integer $is_removed
  *
@@ -37,10 +36,10 @@ class Comment extends ActiveRecord
     {
         return [
             [['create_time'], 'safe'],
-            [['creator_id', 'client_id', 'is_removed'], 'integer'],
+            [['author_id', 'is_removed'], 'integer'],
             [['text'], 'required'],
             [['text'], 'string'],
-            [['client_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['client_id' => 'id']],
+            [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
         ];
     }
 
@@ -52,8 +51,7 @@ class Comment extends ActiveRecord
         return [
             'id' => 'ID',
             'create_time' => 'Create Time',
-            'creator_id' => 'Creator ID',
-            'client_id' => 'Client ID',
+            'author_id' => 'Author ID',
             'text' => 'Text',
             'is_removed' => 'Is Removed',
         ];
@@ -62,9 +60,9 @@ class Comment extends ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getClient()
+    public function getAuthor()
     {
-        return $this->hasOne(User::className(), ['id' => 'client_id']);
+        return $this->hasOne(User::className(), ['id' => 'author_id']);
     }
 
 
@@ -107,6 +105,6 @@ class Comment extends ActiveRecord
 
     public function getProfile()
     {
-        return $this->hasMany(Profile::className(), ['profile_id' => 'id']);
+        return $this->hasMany(Profile::className(), ['profile_id' => 'id'])->via('ProfileComment');
     }
 }

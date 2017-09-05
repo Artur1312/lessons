@@ -65,27 +65,6 @@ class m170801_083513_create_payment_table extends Migration
     public function down()
     {
 
-        $this->dropForeignKey(
-            'fk-payment-package_id',
-            'payment'
-        );
-
-        $this->dropForeignKey(
-            'fk-payment-payment_type',
-            'payment'
-        );
-
-        $this->dropIndex(
-            'idx-payment-package_id',
-            'payment'
-        );
-
-        $this->dropIndex(
-            'idx-payment-payment_type_id',
-            'payment'
-        );
-
-
         $this->dropTable('payment');
     }
 }

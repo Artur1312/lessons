@@ -104,54 +104,6 @@ class m170731_103505_create_package_table extends Migration
      */
     public function down()
     {
-        //dropping foregin keys for table 'package'
-
-        $this->dropForeignKey(
-            'fk-package-tutor',
-            'package'
-        );
-
-        $this->dropForeignKey(
-            'fk-package-course',
-            'package'
-        );
-
-        $this->dropForeignKey(
-            'fk-package-product',
-            'package'
-        );
-
-        $this->dropForeignKey(
-            'fk-package-client',
-            'package'
-        );
-
-
-        //end dropping
-        //dropping indexes for table 'package'
-
-        $this->dropIndex(
-            'idx-package-tutor_id',
-            'package'
-        );
-
-        $this->dropIndex(
-            'idx-package-course_type_id',
-            'package'
-        );
-
-        $this->dropIndex(
-            'idx-package-product_id',
-            'package'
-        );
-
-        $this->dropIndex(
-            'idx-package-client_id',
-            'package'
-        );
-
-        //end dropping
-
         $this->dropTable('package');
     }
 }

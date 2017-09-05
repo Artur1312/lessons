@@ -71,25 +71,6 @@ class m170731_082312_create_profile_table extends Migration
      */
     public function down()
     {
-        $this->dropForeignKey(
-            'fk-profile-wallet',
-            'profile'
-        );
-
-        $this->dropForeignKey(
-            'fk-profile-user',
-            'profile'
-        );
-
-        $this->dropIndex(
-            'idx-profile-wallet_id',
-            'profile'
-        );
-
-        $this->dropIndex(
-            'idx-profile-user_id',
-            'profile'
-        );
 
         $this->dropTable('profile');
     }

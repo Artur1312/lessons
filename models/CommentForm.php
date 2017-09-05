@@ -16,7 +16,7 @@ class CommentForm extends Model
 {
 
     public $comment;
-
+    public $profile_id;
     public function rules()
     {
 
@@ -31,17 +31,18 @@ class CommentForm extends Model
     public function saveProfileComment ($profile_id)
     {
 
+        $profile = new Profile();
+
         $comment = new Comment();
-        $comment->create_time = date('Y-m-d H:i');
+        $comment->created_at = date('Y-m-d H:i');
         $comment->text = $this->comment;
-        $comment->client_id = Yii::$app->user->id;
-//        $comment->profile_id = $profile_id;
+        $comment->author_id = Yii::$app->user->id;
+        $comment->save();
 
         $comment_profile = new CommentProfile();
-
         $comment_profile->comment_id = $comment->id;
         $comment_profile->profile_id = $profile_id;
-
+        $comment_profile->save();
 //        $comment->link('profile', $comment_profile);
         $db = \Yii::$app->db;
         $transaction = $db->beginTransaction();
@@ -53,7 +54,39 @@ class CommentForm extends Model
         }
         return null;
 //        $comment->date = date('Y-m-d H:i');
-//        return $comment->save(false);
+
     }
+
+//    public function saveProfileComment ()
+//    {
+//
+//
+//        $comment = new Comment();
+//        $comment->created_at = date('Y-m-d H:i');
+//        $comment->text = $this->comment;
+//        $comment->author_id = Yii::$app->user->id;
+//        $comment->save();
+//
+//        $comment_profile = new CommentProfile();
+//        $comment_profile->comment_id = $comment->id;
+//        $profile = new Profile();
+//        $profile_id = $profile->id;
+//        $profile->save();
+//        $comment_profile->profile_id = $profile_id;
+//        $comment_profile->save();
+////        $comment->link('profile', $comment_profile);
+//        $db = \Yii::$app->db;
+//        $transaction = $db->beginTransaction();
+//        if ($comment->save(false) && $comment_profile->save(false)) {
+//
+//            $transaction->commit();
+//        } else {
+//            $transaction->rollback();
+//        }
+//        return null;
+////        $comment->date = date('Y-m-d H:i');
+//
+//    }
+
 
 }

@@ -14,30 +14,29 @@ class m170731_095353_create_comment_table extends Migration
     {
         $this->createTable('comment', [
             'id' => 'pk',
-            'client_id' => $this->integer(),
-            'profile_id' => $this->integer(),
+            'author_id' => $this->integer(),
+//            'profile_id' => $this->integer(),
             'text' => $this->text()->notNull(),
-            'create_time' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
-//            'date'=>$this->dateTime(),
+            'created_at' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
             'is_removed' => "tinyint(1) NOT NULL DEFAULT 0"
         ]);
 
         $this->createIndex(
         'idx-comment-client_id',
         'comment',
-        'client_id'
+        'author_id'
     );
 
-        $this->createIndex(
-            'idx-comment-profile_id',
-            'comment',
-            'profile_id'
-        );
+//        $this->createIndex(
+//            'idx-comment-profile_id',
+//            'comment',
+//            'profile_id'
+//        );
 
         $this->addForeignKey(
             'fk-comment-client',
             'comment',
-            'client_id',
+            'author_id',
             'user',
             'id',
             'CASCADE',
@@ -45,16 +44,16 @@ class m170731_095353_create_comment_table extends Migration
 
         );
 
-        $this->addForeignKey(
-            'fk-comment-profile',
-            'comment',
-            'profile_id',
-            'profile',
-            'id',
-            'CASCADE',
-            'CASCADE'
-
-        );
+//        $this->addForeignKey(
+//            'fk-comment-profile',
+//            'comment',
+//            'profile_id',
+//            'profile',
+//            'id',
+//            'CASCADE',
+//            'CASCADE'
+//
+//        );
     }
 
     /**
@@ -62,26 +61,6 @@ class m170731_095353_create_comment_table extends Migration
      */
     public function down()
     {
-        $this->dropForeignKey(
-            'fk-comment-profile',
-            'comment'
-        );
-
-        $this->dropForeignKey(
-            'fk-comment-client',
-            'comment'
-        );
-
-        $this->createIndex(
-            'idx-comment-profile_id',
-            'comment',
-            'profile_id'
-        );
-
-        $this->dropIndex(
-            'idx-comment-client_id',
-            'comment'
-        );
 
         $this->dropTable('comment');
     }

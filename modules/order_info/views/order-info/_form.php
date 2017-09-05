@@ -1,6 +1,8 @@
 <?php
 
+use diiimonn\widgets\CheckboxMultiple;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -34,6 +36,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'free_days')->textInput() ?>
 
+
     <?= $form->field($model, 'free_times')->textInput() ?>
 
     <?= $form->field($model, 'goal')->textInput() ?>
@@ -57,5 +60,12 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
+
+
+    <?php
+
+
+
+    ?>
 
 </div>

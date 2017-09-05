@@ -46,17 +46,6 @@ class m170731_101822_create_notification_table extends Migration
      */
     public function down()
     {
-        $this->dropForeignKey(
-            'fk-notification-client',
-            'notification'
-        );
-
-        $this->dropIndex(
-            'idx-notification-client_id',
-            'notification'
-        );
-
-
         $this->dropTable('notification');
     }
 }
