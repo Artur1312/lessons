@@ -9,15 +9,7 @@ $(document).on('ready pjax:success', function() {  // 'pjax:success' use if you 
     });
 });
 
-//for creating button
 
-$(function () {
-    $('#modalButton').click(function () {
-        $('#modal').modal('show')
-            .find('#modalContent')
-            .load($(this).attr('value'));
-    });
-});
 
 //dropdown toggle for mobile version
 

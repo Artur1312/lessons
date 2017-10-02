@@ -10,9 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * PayoutTypeController implements the CRUD actions for PayoutType model.
+ * TypeController implements the CRUD actions for PayoutType model.
  */
-class PayoutTypeController extends Controller
+class TypeController extends Controller
 {
     /**
      * @inheritdoc
@@ -68,7 +68,7 @@ class PayoutTypeController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('create', [
+            return $this->renderAjax('create', [
                 'model' => $model,
             ]);
         }

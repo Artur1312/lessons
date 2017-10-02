@@ -3,9 +3,9 @@
 namespace app\models;
 
 use app\models\Comment;
-use app\modules\lead_info\models\LeadInfo;
-use app\modules\order_info\models\OrderInfo;
-use app\modules\order_info\models\OrderStatusLog;
+use app\modules\leads\models\LeadInfo;
+use app\modules\orders\models\OrderInfo;
+use app\modules\orders\models\OrderStatusLog;
 use app\modules\package\models\Package;
 use Yii;
 use yii\db\ActiveRecord;

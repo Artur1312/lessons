@@ -10,9 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * PaymentTypeController implements the CRUD actions for PaymentType model.
+ * TypeController implements the CRUD actions for PaymentType model.
  */
-class PaymentTypeController extends Controller
+class TypeController extends Controller
 {
     /**
      * @inheritdoc
@@ -68,7 +68,7 @@ class PaymentTypeController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('create', [
+            return $this->renderAjax('create', [
                 'model' => $model,
             ]);
         }

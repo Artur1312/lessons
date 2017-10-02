@@ -23,6 +23,12 @@ class AppAsset extends AssetBundle
     public $js = [
 
         'js/main.js',
+        //for modal structure
+        'js/modals/modal.js',
+        'js/modals/modal1.js',
+        'js/modals/modal2.js',
+        'js/modals/modal3.js',
+        //end module structure
 //        'js/jquery-3.2.1.min.js',
         'js/bootstrap.min.js',
 

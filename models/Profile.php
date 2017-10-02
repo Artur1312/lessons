@@ -115,8 +115,4 @@ class Profile extends ActiveRecord
         return $this->hasMany(Comment::className(), ['profile_id' => 'id'])->via('profileComment');
     }
 
-
-
-
-
 }

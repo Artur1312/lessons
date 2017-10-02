@@ -18,13 +18,20 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lead Info', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::button('Create Form', ['value'=>Url::to('/type/create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
+<!--        --><?//= Html::a('Create Lead Info', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::button('Create Lead Info', ['value'=>Url::to('create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
+        <?= Html::button('Create Channel', ['value'=>Url::to('/leads/channel/create'), 'class' => 'btn btn-success', 'id'=>'modalButton1']); ?>
+        <?= Html::button('Create Form', ['value'=>Url::to('/leads/form/create'), 'class' => 'btn btn-success', 'id'=>'modalButton2']); ?>
+        <?= Html::button('Create Landing', ['value'=>Url::to('/leads/landing/create'), 'class' => 'btn btn-success', 'id'=>'modalButton3']); ?>
+
+
     </p>
+
+    <!-- modal structure beginning (for create-action buttons)-->
 
     <?php
     Modal::begin([
-        'header'=>'<h4>Add a form</h4>',
+        'header'=>'<h4>Add a lead</h4>',
         'id'=>'modal',
         'size'=>'modal-lg',
     ]);
@@ -34,6 +41,51 @@ $this->params['breadcrumbs'][] = $this->title;
     Modal::end();
 
     ?>
+
+    <?php
+    Modal::begin([
+        'header'=>'<h4>Add a channel</h4>',
+        'id'=>'modal1',
+        'size'=>'modal-lg',
+    ]);
+
+    echo "<div id='modalContent1'></div>";
+
+    Modal::end();
+
+    ?>
+
+    <?php
+    Modal::begin([
+        'header'=>'<h4>Add a Form</h4>',
+        'id'=>'modal2',
+        'size'=>'modal-lg',
+    ]);
+
+    echo "<div id='modalContent2'></div>";
+
+    Modal::end();
+    ?>
+
+    <?php
+    Modal::begin([
+        'header'=>'<h4>Add a Landing</h4>',
+        'id'=>'modal3',
+        'size'=>'modal-lg',
+    ]);
+
+    echo "<div id='modalContent3'></div>";
+
+    Modal::end();
+
+    ?>
+
+
+
+
+    <!-- modal structure ending (for create-action buttons)-->
+
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,

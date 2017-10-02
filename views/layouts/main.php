@@ -34,7 +34,7 @@ AppAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?=Yii::$app->homeUrl ?>">My Company</a>
+                <a class="navbar-brand" href="<?=Yii::$app->homeUrl ?>">LessonShip</a>
             </div>
             <div id="w0-collapse" class="collapse navbar-collapse">
                 <ul id="w1"class="navbar-nav navbar-right nav">
@@ -48,6 +48,8 @@ AppAsset::register($this);
                         <li><a href="<?= Yii::$app->homeUrl?>">Home</a></li>
                         <li><a href="<?= Url::toRoute(['site/about'])?>">About</a></li>
                         <li><a href="<?=  Url::toRoute(['site/contact'])?>">Contact</a></li>
+                        <li><a href="<?=  Url::toRoute(['/leads/info/index'])?>">Lead Info</a></li>
+                        <li><a href="<?=  Url::toRoute(['/orders/info/index'])?>">Order Info</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Tools
@@ -59,13 +61,13 @@ AppAsset::register($this);
                                 <li><a href="<?=  Url::toRoute(['/wallet/bank/index'])?>">Banks</a></li>
                                 <li><a href="<?=  Url::toRoute(['/wallet/currency/index'])?>">Currency</a></li>
                                 <li><a href="<?=  Url::toRoute(['/course/index'])?>">Courses</a></li>
-                                <li><a href="<?=  Url::toRoute(['/lead_info/lead-landing/index'])?>">Lead Landing</a></li>
-                                <li><a href="<?=  Url::toRoute(['/lead_info/lead-form/index'])?>">Lead Form</a></li>
-                                <li><a href="<?=  Url::toRoute(['/lead_info/lead-channel/index'])?>">Lead Channel</a></li>
-                                <li><a href="<?=  Url::toRoute(['/payment/payment-type/index'])?>">Payment Type</a></li>
-                                <li><a href="<?=  Url::toRoute(['/payout/payout-type/index'])?>">Payout Type</a></li>
+                                <li><a href="<?=  Url::toRoute(['/leads/landing/index'])?>">Lead Landing</a></li>
+                                <li><a href="<?=  Url::toRoute(['/leads/form/index'])?>">Lead Form</a></li>
+                                <li><a href="<?=  Url::toRoute(['/leads/channel/index'])?>">Lead Channel</a></li>
+                                <li><a href="<?=  Url::toRoute(['/payment/type/index'])?>">Payment Type</a></li>
+                                <li><a href="<?=  Url::toRoute(['/payout/type/index'])?>">Payout Type</a></li>
                                 <li><a href="<?=  Url::toRoute(['/product/index'])?>">Product</a></li>
-                                <li><a href="<?=  Url::toRoute(['/tutor_type/tutor-type/index'])?>">Tutor Type</a></li>
+                                <li><a href="<?=  Url::toRoute(['/tutors/type/index'])?>">Tutor Type</a></li>
 
                             </ul>
 
