@@ -20,16 +20,13 @@ class PublicAsset extends AssetBundle
 
         'css/materialize.css',
         'css/style.css',
-        //chartist
+//        //chartist
         'js/materialize/plugins/chartist-js/chartist.min.css',
-        //dataTables
+//        //dataTables
         'js/materialize/plugins/data-tables/css/jquery.dataTables.min.css',
-        //fullcalendar
+//        //fullcalendar
         'js/materialize/plugins/fullcalendar/css/fullcalendar.min.css',
         'css/prism.css',
-        'css/page-center.css',
-
-
 //        'css/site.css',
 
     ];

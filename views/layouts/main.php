@@ -9,7 +9,7 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use yii\helpers\Url;
 
-//PublicAsset::register($this);
+PublicAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -19,32 +19,25 @@ use yii\helpers\Url;
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="msapplication-TileColor" content="#00bcd4">
-    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <link href="/web/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="/web/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-    <link href="/web/js/materialize/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="/web/js/materialize/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="/web/js/materialize/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
     <?php $this->head() ?>
 
 </head>
 <body>
 <?php $this->beginBody() ?>
-<!--<div id="loader-wrapper">-->
-<!--    <div id="loader"></div>-->
-<!--    <div class="loader-section section-left"></div>-->
-<!--    <div class="loader-section section-right"></div>-->
-<!--</div>-->
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
 <!-- START HEADER -->
 <header id="header" class="page-topbar">
     <!-- start header nav-->
     <div class="navbar-fixed">
         <nav class="cyan">
+
             <div class="nav-wrapper">
                 <h1 class="logo-wrapper"><a href="<?=Yii::$app->homeUrl ?>" class="brand-logo darken-1"></a> <span class="logo-text">Materialize</span></h1>
                 <ul class="right hide-on-med-and-down">
@@ -283,28 +276,6 @@ use yii\helpers\Url;
 <!--        </div>-->
 <!--    </div>-->
 <!--</footer>-->
-<script type="text/javascript" src="/web/js/jquery-1.11.2.min.js"></script>
-<!--materialize js-->
-<script type="text/javascript" src="/web/js/materialize/materialize.js"></script>
-<!--scrollbar-->
-<script type="text/javascript" src="/web/js/materialize/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
-
-<!-- chartist -->
-<script type="text/javascript" src="/web/js/materialize/plugins/chartist-js/chartist.min.js"></script>
-
-<!-- chartjs -->
-<script type="text/javascript" src="/web/js/materialize/plugins/chartjs/chart.min.js"></script>
-<script type="text/javascript" src="/web/js/materialize/plugins/chartjs/chart-script.js"></script>
-
-<!-- sparkline -->
-<script type="text/javascript" src="/web/js/materialize/plugins/sparkline/jquery.sparkline.min.js"></script>
-<script type="text/javascript" src="/web/js/materialize/plugins/sparkline/sparkline-script.js"></script>
-
-<!--jvectormap-->
-<script type="text/javascript" src="/web/js/materialize/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script type="text/javascript" src="/web/js/materialize/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script type="text/javascript" src="/web/js/materialize/plugins/jvectormap/vectormap-script.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>

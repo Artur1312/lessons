@@ -69,9 +69,7 @@ AppAsset::register($this);
                                 <li><a href="<?=  Url::toRoute(['/payout/type/index'])?>">Payout Type</a></li>
                                 <li><a href="<?=  Url::toRoute(['/product/index'])?>">Product</a></li>
                                 <li><a href="<?=  Url::toRoute(['/tutors/type/index'])?>">Tutor Type</a></li>
-
                             </ul>
-
                         </li>
                         <li> <a href="<?= Url::toRoute(['/profile/view','id'=>Yii::$app->user->identity->id]);?>" title="View" aria-label="View"><span class="glyphicon glyphicon-eye-open"></span></a></li>
                         <li><a href="<?= Url::toRoute(['auth/logout'])?>">Logout(<?=Yii::$app->user->identity->username?>)</a></li>
