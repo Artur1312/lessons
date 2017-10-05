@@ -33,6 +33,7 @@ class CurrencyController extends Controller
      * Lists all Currency models.
      * @return mixed
      */
+
     public function actionIndex()
     {
         $searchModel = new CurrencySearch();
