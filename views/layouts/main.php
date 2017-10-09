@@ -39,8 +39,13 @@ PublicAsset::register($this);
         <nav class="cyan">
 
             <div class="nav-wrapper">
-                <h1 class="logo-wrapper"><a href="<?=Yii::$app->homeUrl ?>" class="brand-logo darken-1"></a> <span class="logo-text">Materialize</span></h1>
+                <h1 class="logo-wrapper"><a href="<?=Yii::$app->homeUrl ?>" class="brand-logo"></a> <span class="logo-text">Materialize</span></h1>
+<!--                <h1 class="logo-wrapper"><a href="#" class="brand-logo"><span class="logo-text">Materialize</span></a></h1>-->
+                <a href="<?=Yii::$app->homeUrl ?>" class="brand-logo">
+                    <img src="/web/images/online.png" alt="online logo">
+                </a>
                 <ul class="right hide-on-med-and-down">
+
                     <?php if(Yii::$app->user->isGuest):?>
                         <li><a href="<?= Url::toRoute(['auth/login'])?>">Login</a></li>
                         <li><a href="<?= Url::toRoute(['signup/index'])?>">Register</a></li>
