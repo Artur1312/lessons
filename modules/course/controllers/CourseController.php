@@ -58,7 +58,7 @@ class CourseController extends Controller
     public function actionView($id)
     {
         if (Yii::$app->request->isAjax) {
-            return $this->renderAjax('view', [
+            return $this->render('view', [
                 'model' => $this->findModel($id),
             ]);
         } else {

@@ -140,49 +140,34 @@ PublicAsset::register($this);
                                 <ul>
                                     <li><a href="<?= Url::toRoute(['/orders/info/index'])?>">Info</a>
                                     </li>
-                                    <li><a href="css-icons.html">Icons</a>
+                                    <li><a href="<?= Url::toRoute(['/orders/status/index'])?>">Status</a>
                                     </li>
-                                    <li><a href="css-shadow.html">Shadow</a>
+                                    <li><a href="<?= Url::toRoute(['/orders/bank/index'])?>">Banks</a>
                                     </li>
-                                    <li><a href="css-media.html">Media</a>
+                                    <li><a href="<?= Url::toRoute(['/orders/wallet/index'])?>">Wallets</a>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-image-palette"></i>Leads</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="<?= Url::toRoute(['/leads/info/index'])?>">Info</a>
                                     </li>
-                                    <li><a href="css-sass.html">Sass</a>
+                                    <li><a href="<?= Url::toRoute(['/leads/form/index'])?>">Forms</a>
+                                    </li>
+                                    <li><a href="<?=  Url::toRoute(['/leads/channel/index'])?>">Chennels</a>
+                                    </li>
+                                    <li><a href="<?=  Url::toRoute(['/leads/leading/index'])?>">Leading</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-image-palette"></i> UI Elements</a>
-                            <div class="collapsible-body">
-<!--                                <ul>-->
-<!--                                    <li><a href="ui-buttons.html">Buttons</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-badges.html">Badges</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-cards.html">Cards</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-collections.html">Collections</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-accordions.html">Accordian</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-navbar.html">Navbar</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-pagination.html">Pagination</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-preloader.html">Preloader</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-modals.html">Modals</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-media.html">Media</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-toasts.html">Toasts</a>-->
-<!--                                    </li>-->
-<!--                                    <li><a href="ui-tooltip.html">Tooltip</a>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-                            </div>
+                        <li class="bold"><a href="<?=  Url::toRoute(['/course/index'])?>" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Courses</a>
                         </li>
-                        <li class="bold"><a href="app-widget.html" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Widgets <span class="new badge"></span></a>
+                        <li class="bold"><a href="<?=  Url::toRoute(['/package/index'])?>" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Packages </a>
                         </li>
+
+<!--                        <span class="new badge"></span>-->
                         <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-border-all"></i> Tables</a>
                             <div class="collapsible-body">
 <!--                                <ul>-->

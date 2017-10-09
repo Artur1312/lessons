@@ -96,6 +96,9 @@ class PublicAsset extends AssetBundle
 //        'js/materialize/plugins/flot-chart/flot-script.js',
         'js/materialize/plugins1.js',
 
+
+
+
     ];
 
     public $font = [

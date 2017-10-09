@@ -19,7 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::button('Create Course', ['value'=>Url::to('/course/create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
+        <?= Html::a('Create Course', ['create'], ['class' => 'btn btn-success']) ?>
+<!--        --><?//= Html::button('Create Course', ['value'=>Url::to('/course/create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
     </p>
 
     <?php
