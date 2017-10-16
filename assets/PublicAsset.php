@@ -27,6 +27,7 @@ class PublicAsset extends AssetBundle
 //        //fullcalendar
         'js/materialize/plugins/fullcalendar/css/fullcalendar.min.css',
         'css/prism.css',
+
 //        'css/site.css',
 
     ];

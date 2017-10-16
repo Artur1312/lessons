@@ -16,7 +16,8 @@ class m170731_075945_create_wallet_table extends Migration
             'id' => 'pk',
             'payout_type_id' => $this->integer()->notNull(),
             'bank_id' => $this->integer()->notNull(),
-            'currency_id' => $this->integer()->notNull()
+            'currency_id' => $this->integer()->notNull(),
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
 
         $this->createIndex(

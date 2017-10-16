@@ -15,6 +15,7 @@ class m170731_071423_create_payout_type_table extends Migration
         $this->createTable('payout_type', [
             'id' => 'pk',
             'name' => $this->string(128)->notNull()->unique(),
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
     }
 

@@ -15,6 +15,7 @@ class m170731_071033_create_bank_table extends Migration
         $this->createTable('bank', [
             'id' => 'pk',
             'name' => $this->string(128)->notNull()->unique(),
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
     }
 

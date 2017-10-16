@@ -27,6 +27,7 @@ class m170731_082312_create_profile_table extends Migration
             'activity' => $this->string(255)->defaultValue(null),
             'interests' => $this->string(255)->defaultValue(null),
             'wallet_id'=> $this->integer()->defaultValue(null),
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
 
         $this->createIndex(

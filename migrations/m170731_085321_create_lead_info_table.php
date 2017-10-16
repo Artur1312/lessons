@@ -32,7 +32,8 @@ class m170731_085321_create_lead_info_table extends Migration
             'promocode_id' => $this->integer(),
             'count_orders' => $this->integer(),
             'count_sells' => $this->integer(),
-            'total_lessons' => $this->integer()
+            'total_lessons' => $this->integer(),
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
 
         //creating indexes for table 'lead_info'

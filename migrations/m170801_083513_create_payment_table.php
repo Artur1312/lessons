@@ -20,7 +20,7 @@ class m170801_083513_create_payment_table extends Migration
             'lessons' => $this->integer(),
             'stock_lessons' => $this->integer(),
             'total_lessons' => $this->integer(),
-            'is_rejected' => "tinyint(1) NOT NULL DEFAULT 0"
+            'isRejected'=> "TINYINT (1) default 1",
         ]);
 
 

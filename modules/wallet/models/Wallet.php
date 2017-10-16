@@ -5,6 +5,7 @@ namespace app\modules\wallet\models;
 use app\modules\payout\models\PayoutType;
 use app\models\Profile;
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "wallet".
@@ -19,8 +20,12 @@ use Yii;
  * @property Currency $currency
  * @property PayoutType $payoutType
  */
-class Wallet extends \yii\db\ActiveRecord
+class Wallet extends ActiveRecord
 {
+    const STATUS_ALLOW = 'allw';
+    const STATUS_DISALLOW = 'dsal';
+    const REMOVE = 0;
+
     /**
      * @inheritdoc
      */
@@ -86,5 +91,35 @@ class Wallet extends \yii\db\ActiveRecord
     public function getPayoutType()
     {
         return $this->hasOne(PayoutType::className(), ['id' => 'payout_type_id']);
+    }
+
+    //allow | disallow pack
+
+    public function isAllowed()
+    {
+        return $this->status;
+    }
+
+    public function allow()
+    {
+        $this->status = self::STATUS_ALLOW;
+        return $this->save(false);
+    }
+
+    public function disallow()
+    {
+        $this->status = self::STATUS_DISALLOW;
+        return $this->save(false);
+    }
+
+    public function isRemoved()
+    {
+        return $this->isRemoved;
+    }
+
+    public function remove()
+    {
+        $this->isRemoved = self::REMOVE;
+        return $this->save(false);
     }
 }

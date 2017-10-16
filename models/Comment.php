@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\modules\order_info\models\OrderInfo;
+use app\modules\orders\models\OrderInfo;
 use Yii;
 use yii\db\ActiveRecord;
 

@@ -2,13 +2,14 @@
 
 namespace app\modules\orders\models;
 
+use app\models\Comment;
 use app\modules\comment\models\CommentOrderInfo;
 use app\modules\tutors\models\TutorType;
 use app\models\User;
-use app\modules\comment\models\Comment;
 use app\modules\course\models\Course;
 use app\modules\product\models\Product;
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "order_info".
@@ -42,8 +43,13 @@ use Yii;
  * @property Product $product
  * @property TutorType $tutorType
  */
-class OrderInfo extends \yii\db\ActiveRecord
+class OrderInfo extends ActiveRecord
 {
+
+    const STATUS_ALLOW = 'allw';
+    const STATUS_DISALLOW = 'dsal';
+    const REMOVE = 0;
+
     /**
      * @inheritdoc
      */
@@ -148,4 +154,35 @@ class OrderInfo extends \yii\db\ActiveRecord
     {
         return $this->hasOne(TutorType::className(), ['id' => 'tutor_type_id']);
     }
+
+    //allow | disallow pack
+
+    public function isAllowed()
+    {
+        return $this->status;
+    }
+
+    public function allow()
+    {
+        $this->status = self::STATUS_ALLOW;
+        return $this->save(false);
+    }
+
+    public function disallow()
+    {
+        $this->status = self::STATUS_DISALLOW;
+        return $this->save(false);
+    }
+
+    public function isRemoved()
+    {
+        return $this->isRemoved;
+    }
+
+    public function remove()
+    {
+        $this->isRemoved = self::REMOVE;
+        return $this->save(false);
+    }
+
 }

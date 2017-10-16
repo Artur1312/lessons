@@ -35,6 +35,7 @@ class m170801_090114_create_order_info_table extends Migration
             'order_status' => $this->char(14)->notNull()->defaultValue('Новый'),
 //            'order_status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') DEFAULT 'Новый'",
             'order_comment' => $this->string(255),
+            'isRemoved'=> "TINYINT (1) default 1",
 
         ]);
 

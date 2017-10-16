@@ -35,12 +35,9 @@ class InfoController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new OrderInfoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $orders = OrderInfo::find()->orderBy('id asc')->all();
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'orders' => $orders,
         ]);
     }
 
@@ -101,7 +98,7 @@ class InfoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($id)->remove();
 
         return $this->redirect(['index']);
     }

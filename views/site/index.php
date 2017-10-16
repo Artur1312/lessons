@@ -48,5 +48,10 @@ $this->title = 'My Yii Application';
             </div>
         </div>
 
+
+
+<?//= $this->render('/parts/sidebar');
+//    ?>
+
     </div>
 </div>

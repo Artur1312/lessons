@@ -18,7 +18,7 @@ class m170731_095353_create_comment_table extends Migration
 //            'profile_id' => $this->integer(),
             'text' => $this->text()->notNull(),
             'created_at' => 'timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP',
-            'is_removed' => "tinyint(1) NOT NULL DEFAULT 0"
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
 
         $this->createIndex(

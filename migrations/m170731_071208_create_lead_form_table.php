@@ -15,6 +15,7 @@ class m170731_071208_create_lead_form_table extends Migration
         $this->createTable('lead_form', [
             'id' => 'pk',
             'name' => $this->string(128)->notNull()->unique(),
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
     }
 

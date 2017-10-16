@@ -17,10 +17,11 @@
 body {
   background-color: #fcfcfc;
 }
-#main,
-footer {
-  padding-left: 240px;
-}
+/*#main,*/
+/*footer {*/
+  /*padding-left: 240px;*/
+/*}*/
+
 .margin {
   margin: 0;
 }
@@ -420,8 +421,8 @@ ul.side-nav .collapsible-header {
 }
 .sidebar-collapse {
   position: absolute;
-  left: -170px;
-  top: -45px;
+  left: 170px;
+  top: -67px;
 }
 ul.side-nav.fixed {
   overflow: hidden;

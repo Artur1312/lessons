@@ -1,9 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
-use yii\bootstrap\Modal;
-use yii\widgets\Pjax;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -23,60 +20,50 @@ $this->params['breadcrumbs'][] = $this->title;
 <!--        --><?//= Html::button('Create Course', ['value'=>Url::to('/course/create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
     </p>
 
-    <?php
-                Modal::begin([
-                        'header'=>'<h4>Add a course</h4>',
-                        'id'=>'modal',
-                        'size'=>'modal-lg',
-                ]);
+<!--    --><?//= GridView::widget([
+    //        'dataProvider' => $dataProvider,
+    //        'filterModel' => $searchModel,
+    //        'columns' => [
+    //            ['class' => 'yii\grid\SerialColumn'],
+    //            'name',
+    //            ['class' => 'yii\grid\ActionColumn',
+    //            'buttons' => [
+    //                'view' => function ($url, $model) {
+    //                    return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, ['class' => 'view', 'data-pjax' => '0']);
+    //                }
+    //            ],
+    //        ],
+    //    ]
+    //    ]);
+    //?>
+    <?php if(!empty($courses)): ?>
+    <?php foreach($courses as $course):?>
+    <?php if($course->isRemoved()): ?>
+        <table class="table">
+            <thead>
+            <tr>
+                <td>#</td>
+                <td>Name</td>
+                <td>Actions</td>
+            </tr>
+            </thead>
+        <?php endif; ?>
+        <?php endforeach; ?>
+            <tbody>
+                <?php if($course->isRemoved()):?>
+                    <tr>
+                        <td><?= $course->id?></td>
+                        <td><?= $course->name?></td>
 
-                echo "<div id='modalContent'></div>";
+                        <td>
+                            <a href="<?= Url::toRoute(['course/view','id'=>$course->id]);?>" title="View" aria-label="View"><span class="mdi-action-visibility"></span></a>
+                            <a href="<?= Url::toRoute(['course/update','id'=>$course->id]);?>" title="Update" aria-label="Update"><span class="mdi-content-create"></span></a>
+                            <a href="<?= Url::toRoute(['course/delete','id'=>$course->id]);?>" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post"><span class="mdi-content-clear"></span></a>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    <?php endif;?>
 
-                Modal::end();
-
-    ?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'name',
-            ['class' => 'yii\grid\ActionColumn',
-            'buttons' => [
-                'view' => function ($url, $model) {
-                    return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, ['class' => 'view', 'data-pjax' => '0']);
-                }
-            ],
-        ],
-    ]
-    ]);
-
-//$this->registerJs(
-//        "
-//        $(function () {
-//    $('#modalButton').click(function () {
-//        $('#modal').modal('show')
-//            .find('#modalContent')
-//            .load($(this).attr('value'));
-//    });
-//});"
-//);
-    $this->registerJs(
-        "$(document).on('ready pjax:success', function() {  // 'pjax:success' use if you have used pjax
-    $('.view').click(function(e){
-       e.preventDefault();
-       $('#pModal').modal('show')
-                  .find('.modal-content')
-                  .load($(this).attr('href'));
-   });
-});
-"
-    );
-
-    Modal::begin([
-        'id'=>'pModal',
-        'size'=>'modal-lg',
-    ]);
-    Modal::end();
-    ?>
 </div>

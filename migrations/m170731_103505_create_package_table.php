@@ -26,7 +26,7 @@ class m170731_103505_create_package_table extends Migration
             'comment' => $this->string(),
             'status' => $this->char(9)->notNull()->defaultValue('Обучается'),
 //            'status' => "ENUM('Обучается', 'Пауза', 'Закрыт') NOT NULL DEFAULT 'Обучается'",
-            'is_removed' => "tinyint(1) NOT NULL DEFAULT 0"
+            'isRemoved'=> "TINYINT (1) default 1",
         ]);
 
         $this->createIndex(

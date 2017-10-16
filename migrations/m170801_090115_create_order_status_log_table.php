@@ -18,6 +18,7 @@ class m170801_090115_create_order_status_log_table extends Migration
             'creator_id' => $this->integer(),
             'order_id' => $this->integer(),
             'status' => $this->char(14)->notNull()->defaultValue('Новый'),
+            'isRemoved'=> "TINYINT (1) default 1",
 //            'status' => "ENUM('Новый','Принят','Невалид','Дубликат','Недозвон','Неинтересно','Потвержден','Отложен','Передумал','Готов к оплате','Непродан','Продажа','Апсейл') NOT NULL DEFAULT 'Новый'",
         ]);
 

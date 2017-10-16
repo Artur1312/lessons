@@ -18,6 +18,7 @@ class m170731_071818_create_payout_table extends Migration
             'total' => $this->integer()->defaultValue(0),
             'comment' => $this->string(255),
             'status' => $this->char(9)->notNull(),
+            'isRemoved'=> "TINYINT (1) default 1",
 //            'status' => "ENUM('Выплачено', 'Отменено') NOT NULL DEFAULT 'Выплачено'",
         ]);
 
