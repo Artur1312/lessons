@@ -30,6 +30,13 @@ body {
   top: -14px;
   font-size: 0.8rem;
 }
+
+#main,
+footer {
+  padding-left: 240px;
+}
+
+
 #sidenav-overlay {
   background-color: transparent;
 }

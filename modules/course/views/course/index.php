@@ -36,6 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
     //    ]
     //    ]);
     //?>
+
+
     <?php if(!empty($courses)): ?>
     <?php foreach($courses as $course):?>
     <?php if($course->isRemoved()): ?>
@@ -65,5 +67,6 @@ $this->params['breadcrumbs'][] = $this->title;
             </tbody>
         </table>
     <?php endif;?>
+
 
 </div>

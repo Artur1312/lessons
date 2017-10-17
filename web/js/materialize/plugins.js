@@ -83,6 +83,8 @@ $(function() {
   $('.sidebar-collapse').sideNav({
     edge: 'left', // Choose the horizontal origin
   });
+    //
+    // $(".button-collapse").sideNav();
 
   //Main Left Sidebar Chat
   $('.chat-collapse').sideNav({

@@ -59,7 +59,9 @@ use yii\helpers\Url;
         <!--                <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>-->
         <!--                </li>-->
         <li class="no-padding">
+            <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2"><i class="material-icons">menu</i></a>
             <ul class="collapsible collapsible-accordion">
+
                 <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i>Orders</a>
                     <div class="collapsible-body">
                         <ul>
@@ -149,6 +151,7 @@ use yii\helpers\Url;
                 </li>
             </ul>
         </li>
+
         <li class="li-hover"><div class="divider"></div></li>
         <li class="li-hover"><p class="ultra-small margin more-text">MORE</p></li>
         <!--                <li><a href="css-grid.html"><i class="mdi-image-grid-on"></i> Grid</a>-->
@@ -165,4 +168,5 @@ use yii\helpers\Url;
 
 </aside>
 
-<a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2"><i class="material-icons">menu</i></a>
+<!--<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>-->
+

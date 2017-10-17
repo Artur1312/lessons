@@ -32,24 +32,13 @@ PublicAsset::register($this);
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
 </div>
-<!-- START HEADER -->
-<header id="header" class="page-topbar">
-    <!-- start header nav-->
-    <div class="navbar-fixed">
-        <nav class="cyan">
 
-            <div class="nav-wrapper">
-                <h1 class="logo-wrapper"><a href="<?=Yii::$app->homeUrl ?>" class="brand-logo"></a></h1>
-<!--                <h1 class="logo-wrapper"><a href="#" class="brand-logo"><span class="logo-text">Materialize</span></a></h1>-->
-                <a href="<?=Yii::$app->homeUrl ?>" class="brand-logo">
-                    <img src="/web/images/online.png" alt="online logo">
-                </a>
-            </div>
-        </nav>
-    </div>
-</header>
+<?= $this->render('//parts/navbar')?>
 
-<?php if($this->render('/parts/sidebar')):?>
+
+
+<?= $this->render('//parts/sidebar')?>
+
 <div id="main">
     <div class="wrapper">
         <section id="content">
@@ -62,29 +51,6 @@ PublicAsset::register($this);
         </section>
     </div>
 </div>
-<?php else: ?>
-        <div class="wrapper">
-            <section id="content">
-                <div class="container">
-                    <?= Breadcrumbs::widget([
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ]) ?>
-                    <?= $content ?>
-                </div>
-            </section>
-<?php endif; ?>
-<!--<div id="main">-->
-<!--    <div class="wrapper">-->
-<!--        <section id="content">-->
-<!--            <div class="container">-->
-<!--                --><?//= Breadcrumbs::widget([
-//                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-//                ]) ?>
-<!--                --><?//= $content ?>
-<!--            </div>-->
-<!--        </section>-->
-<!--    </div>-->
-<!--</div>-->
 <?php $this->endBody() ?>
 </body>
 </html>

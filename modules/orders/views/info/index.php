@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            ['class' => 'yii\grid\ActionColumn'],
 //        ],
 //    ]); ?>
-
+<?= $this->render('//parts/sidebar'); ?>
     <?php if(!empty($orders)): ?>
         <table class="hoverable">
             <thead>
