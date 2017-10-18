@@ -90,45 +90,40 @@ use yii\helpers\Url;
                 </li>
                 <li class="bold"><a href="<?=  Url::toRoute(['/package/index'])?>" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Packages </a>
                 </li>
+                <li class="bold"><a href="<?=  Url::toRoute(['/package/index'])?>" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Tutors </a>
+                </li>
+                <li class="bold"><a href="<?=  Url::toRoute(['/tutors/type/index'])?>" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Tutors </a>
+                </li>
 
                 <!--                        <span class="new badge"></span>-->
-                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-border-all"></i>Wallets & Banks</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-border-all"></i>Wallets</a>
                     <div class="collapsible-body">
                         <ul>
-                            <li><a href="<?= Url::toRoute(['/orders/bank/index'])?>">Banks</a>
+                            <li><a href="<?= Url::toRoute(['/wallet/bank/index'])?>">Banks</a>
                             </li>
-                            <li><a href="<?= Url::toRoute(['/orders/wallet/index'])?>">Wallets</a>
+                            <li><a href="<?= Url::toRoute(['/wallet/index'])?>">Wallets</a>
+                            <li><a href="<?= Url::toRoute(['/wallet/currency/index'])?>">Currency Type</a>
                         </ul>
                     </div>
                 </li>
-                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-insert-comment"></i> Forms</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-insert-comment"></i> Payouts</a>
                     <div class="collapsible-body">
-                        <!--                                <ul>-->
-                        <!--                                    <li><a href="form-elements.html">Form Elements</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="form-layouts.html">Form Layouts</a>-->
-                        <!--                                    </li>-->
-                        <!--                                </ul>-->
+                                                        <ul>
+                                                            <li><a href="<?= Url::toRoute(['/payout/index'])?>">Payout Table</a>
+                                                            </li>
+                                                            <li><a href="<?= Url::toRoute(['/payout/type/index'])?>">Payout Type</a>
+                                                            </li>
+                                                        </ul>
                     </div>
                 </li>
-                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-social-pages"></i> Pages</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-social-pages"></i> Promocodes & Actions</a>
                     <div class="collapsible-body">
-                        <!--                                <ul>-->
-                        <!--                                    <li><a href="page-login.html">Login</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="page-register.html">Register</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="page-lock-screen.html">Lock Screen</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="page-invoice.html">Invoice</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="page-404.html">404</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="page-500.html">500</a>-->
-                        <!--                                    </li>-->
-                        <!--                                    <li><a href="page-blank.html">Blank</a>-->
-                        <!--                                    </li>-->
-                        <!--                                </ul>-->
+                                                        <ul>
+                                                            <li><a href="<?= Url::toRoute(['/promocode/action/index'])?>">Actions</a>
+                                                            </li>
+                                                            <li><a href="<?= Url::toRoute(['/promocode/index'])?>">Promocodes</a>
+                                                            </li>
+                                                        </ul>
                     </div>
                 </li>
                 <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-editor-insert-chart"></i> Charts</a>

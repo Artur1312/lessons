@@ -2,10 +2,10 @@
 
 namespace app\models;
 
-
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-
+use app\models\Profile;
 
 /**
  * ProfileSearch represents the model behind the search form about `app\models\Profile`.
@@ -18,8 +18,8 @@ class ProfileSearch extends Profile
     public function rules()
     {
         return [
-            [['id', 'user_id', 'phone', 'ip_address', 'age', 'wallet_id'], 'integer'],
-            [['skype', 'country', 'city', 'gender', 'dob', 'activity', 'interests'], 'safe'],
+            [['id', 'user_id', 'phone', 'age', 'wallet_id', 'isRemoved'], 'integer'],
+            [['skype', 'country', 'city', 'ip_address', 'gender', 'dob', 'activity', 'interests'], 'safe'],
         ];
     }
 
@@ -62,15 +62,16 @@ class ProfileSearch extends Profile
             'id' => $this->id,
             'user_id' => $this->user_id,
             'phone' => $this->phone,
-            'ip_address' => $this->ip_address,
             'age' => $this->age,
             'dob' => $this->dob,
             'wallet_id' => $this->wallet_id,
+            'isRemoved' => $this->isRemoved,
         ]);
 
         $query->andFilterWhere(['like', 'skype', $this->skype])
             ->andFilterWhere(['like', 'country', $this->country])
             ->andFilterWhere(['like', 'city', $this->city])
+            ->andFilterWhere(['like', 'ip_address', $this->ip_address])
             ->andFilterWhere(['like', 'gender', $this->gender])
             ->andFilterWhere(['like', 'activity', $this->activity])
             ->andFilterWhere(['like', 'interests', $this->interests]);

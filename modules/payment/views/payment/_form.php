@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'is_rejected')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn waves-effect waves-light  cyan darken-2' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

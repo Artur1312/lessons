@@ -16,22 +16,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <?= Html::button('Create', ['value'=>Url::to('create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
+<!--    --><?//= Html::button('Create', ['value'=>Url::to('create'), 'class' => 'btn waves-effect waves-light  cyan darken-2', 'id'=>'modalButton']); ?>
     <p>
-<!--        --><?//= Html::a('Create Payout Type', ['create'], ['class' => 'btn btn-success']) ?>
+<?= Html::a('Create Payout Type', ['create'], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
     </p>
-    <?php
-    Modal::begin([
-        'header'=>'<h4>Add a Type</h4>',
-        'id'=>'modal',
-        'size'=>'modal-lg',
-    ]);
-
-    echo "<div id='modalContent'></div>";
-
-    Modal::end();
-
-    ?>
+<!--    --><?php
+//    Modal::begin([
+//        'header'=>'<h4>Add a Type</h4>',
+//        'id'=>'modal',
+//        'size'=>'modal-lg',
+//    ]);
+//
+//    echo "<div id='modalContent'></div>";
+//
+//    Modal::end();
+//
+//    ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

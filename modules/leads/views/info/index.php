@@ -18,10 +18,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lead Info', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Create Channel', ['/leads/channel/create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Create Form', ['/leads/form/create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Create Landing', ['/leads/landing/create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Lead Info', ['create'], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
+        <?= Html::a('Create Channel', ['/leads/channel/create'], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
+        <?= Html::a('Create Form', ['/leads/form/create'], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
+        <?= Html::a('Create Landing', ['/leads/landing/create'], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
 <!--        --><?//= Html::button('Create Lead Info', ['value'=>Url::to('create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
 <!--        --><?//= Html::button('Create Channel', ['value'=>Url::to('/leads/channel/create'), 'class' => 'btn btn-success', 'id'=>'modalButton1']); ?>
 <!--        --><?//= Html::button('Create Form', ['value'=>Url::to('/leads/form/create'), 'class' => 'btn btn-success', 'id'=>'modalButton2']); ?>

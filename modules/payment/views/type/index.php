@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
 <!--        --><?//= Html::a('Create Payment Type', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::button('Create', ['value'=>Url::to('create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
+        <?= Html::button('Create', ['value'=>Url::to('create'), 'class' => 'btn waves-effect waves-light  cyan darken-2', 'id'=>'modalButton']); ?>
     </p>
 
     <?php

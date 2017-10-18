@@ -18,21 +18,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-<!--        --><?//= Html::a('Create Bank', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::button('Create', ['value'=>Url::to('create'), 'class' => 'btn btn-success', 'id'=>'modalButton']); ?>
+        <?= Html::a('Create Bank', ['create'], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
+<!--        --><?//= Html::button('Create', ['value'=>Url::to('create'), 'class' => 'waves-effect waves-light btn-large', 'id'=>'modalButton']); ?>
     </p>
-    <?php
-    Modal::begin([
-        'header'=>'<h4>Add a Bank</h4>',
-        'id'=>'modal',
-        'size'=>'modal-lg',
-    ]);
-
-    echo "<div id='modalContent'></div>";
-
-    Modal::end();
+<!--    --><?php
+//    Modal::begin([
+//        'header'=>'<h4>Add a Bank</h4>',
+//        'id'=>'modal',
+//        'size'=>'modal-lg',
+//    ]);
+//
+//    echo "<div id='modalContent'></div>";
+//
+//    Modal::end();
 
     ?>
+
+
+
+
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,

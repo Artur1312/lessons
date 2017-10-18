@@ -18,7 +18,7 @@ class PackageSearch extends Package
     public function rules()
     {
         return [
-            [['id', 'client_id', 'product_id', 'course_type_id', 'duration', 'tutor_id', 'rate', 'left_lessons', 'passed_lessons', 'total_lessons', 'is_removed'], 'integer'],
+            [['id', 'client_id', 'product_id', 'course_type_id', 'duration', 'tutor_id', 'rate', 'left_lessons', 'passed_lessons', 'total_lessons', 'isRemoved'], 'integer'],
             [['comment', 'status'], 'safe'],
         ];
     }
@@ -69,7 +69,7 @@ class PackageSearch extends Package
             'left_lessons' => $this->left_lessons,
             'passed_lessons' => $this->passed_lessons,
             'total_lessons' => $this->total_lessons,
-            'is_removed' => $this->is_removed,
+            'isRemoved' => $this->isRemoved,
         ]);
 
         $query->andFilterWhere(['like', 'comment', $this->comment])
