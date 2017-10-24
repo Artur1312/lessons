@@ -4,23 +4,22 @@ namespace app\models;
 
 use app\modules\orders\models\OrderInfo;
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "comment".
  *
  * @property integer $id
+ * @property string $create_time
  * @property integer $author_id
  * @property string $text
- * @property string $created_at
- * @property integer $isRemoved
+ * @property integer $is_removed
  *
  * @property User $author
- * @property CommentOrderInfo[] $commentOrderInfos
  * @property OrderInfo[] $orderInfos
- * @property CommentProfile[] $commentProfiles
- * @property Profile[] $profiles
+ * @property User[] $users
  */
-class Comment extends \yii\db\ActiveRecord
+class Comment extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -36,10 +35,10 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['author_id', 'isRemoved'], 'integer'],
+            [['create_time'], 'safe'],
+            [['author_id', 'is_removed'], 'integer'],
             [['text'], 'required'],
             [['text'], 'string'],
-            [['created_at'], 'safe'],
             [['author_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
         ];
     }
@@ -51,10 +50,10 @@ class Comment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'create_time' => 'Create Time',
             'author_id' => 'Author ID',
             'text' => 'Text',
-            'created_at' => 'Created At',
-            'isRemoved' => 'Is Removed',
+            'is_removed' => 'Is Removed',
         ];
     }
 
