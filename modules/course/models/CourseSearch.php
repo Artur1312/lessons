@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use app\modules\course\models\Course;
 
 /**
- * CourseSearch represents the model behind the search form about `app\modules\course\models\Course`.
+ * CourseSearch represents the model behind the search form of `app\modules\course\models\Course`.
  */
 class CourseSearch extends Course
 {
@@ -18,7 +18,7 @@ class CourseSearch extends Course
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'isRemoved'], 'integer'],
             [['name'], 'safe'],
         ];
     }
@@ -60,7 +60,10 @@ class CourseSearch extends Course
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'isRemoved' => $this->isRemoved,
         ]);
+
+        $query->where('isRemoved=1');
 
         $query->andFilterWhere(['like', 'name', $this->name]);
 

@@ -44,6 +44,12 @@ $config = [
         'tutors' => [
             'class' => 'app\modules\tutors\TutorsModule',
         ],
+        'comment' => [
+            'class' => 'app\modules\comment\CommentModule',
+        ],
+        'profile' => [
+            'class' => 'app\modules\profile\ProfileModule',
+        ],
     ],
     'components' => [
         'request' => [
@@ -116,6 +122,9 @@ $config = [
                 '<module:comment>/<action:\w+>/<id:\d+>' => '<module>/comment/<action>',
                 '<module:comment>/<action:\w+>' => '<module>/comment/<action>',
 //                '<module:action>/<action:\w+>' => '<module>/action/<action>',
+                //profile
+                '<module:profile>/<action:\w+>/<id:\d+>' => '<module>/profile/<action>',
+                '<module:profile>/<action:\w+>' => '<module>/profile/<action>',
             ],
         ],
 

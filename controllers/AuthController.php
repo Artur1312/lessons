@@ -9,8 +9,7 @@
 namespace app\controllers;
 
 
-use app\models\LoginForm;
-use app\models\User;
+use app\models\form\LoginForm;
 use Yii;
 use yii\web\Controller;
 

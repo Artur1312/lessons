@@ -1,8 +1,11 @@
 <?php
 
-namespace app\models;
+namespace app\modules\comment\models;
+
+use app\modules\profile\models\Profile;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "comment_profile".
@@ -13,7 +16,7 @@ use Yii;
  * @property Comment $comment
  * @property Profile $profile
  */
-class CommentProfile extends \yii\db\ActiveRecord
+class CommentProfile extends ActiveRecord
 {
     /**
      * @inheritdoc

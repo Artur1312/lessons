@@ -7,9 +7,9 @@
  */
 
 namespace app\controllers;
-use app\models\Profile;
+use app\modules\profile\models\Profile;
 use app\models\User;
-use app\models\SignupForm;
+use app\models\form\SignupForm;
 use Yii;
 use yii\web\Controller;
 

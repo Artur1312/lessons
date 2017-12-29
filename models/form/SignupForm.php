@@ -6,9 +6,10 @@
  * Time: 16:56
  */
 
-namespace app\models;
+namespace app\models\form;
 
 
+use app\modules\profile\models\Profile;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;

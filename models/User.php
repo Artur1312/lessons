@@ -2,11 +2,12 @@
 
 namespace app\models;
 
-use app\models\Comment;
+use app\modules\comment\models\Comment;
 use app\modules\leads\models\LeadInfo;
 use app\modules\orders\models\OrderInfo;
 use app\modules\orders\models\OrderStatusLog;
 use app\modules\package\models\Package;
+use app\modules\profile\models\Profile;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;

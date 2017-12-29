@@ -1,12 +1,13 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\profile\controllers;
 
 use app\models\User;
-use app\models\CommentForm;
+use app\models\form\CommentForm;
 use Yii;
-use app\models\Profile;
-//use app\search_models\ProfileSearch;
+use app\modules\profile\models\Profile;
+use app\modules\comment\models\CommentProfile;
+use app\modules\profile\models\ProfileSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

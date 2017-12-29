@@ -6,9 +6,12 @@
  * Time: 14:01
  */
 
-namespace app\models;
+namespace app\models\form;
 
 
+use app\modules\profile\models\Profile;
+use app\modules\comment\models\Comment;
+use app\modules\comment\models\CommentProfile;
 use Yii;
 use yii\base\Model;
 

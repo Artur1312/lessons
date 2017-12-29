@@ -1,11 +1,14 @@
 <?php
 
-namespace app\models;
+namespace app\modules\profile\models;
 
 
+use app\models\User;
 use app\modules\wallet\models\Wallet;
 use Yii;
+use app\modules\comment\models\Comment;
 use yii\db\ActiveRecord;
+
 
 /**
  * This is the model class for table "profile".
