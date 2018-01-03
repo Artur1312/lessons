@@ -10,6 +10,7 @@ use app\modules\comment\models\Comment;
 use yii\db\ActiveRecord;
 
 
+
 /**
  * This is the model class for table "profile".
  *
@@ -116,6 +117,22 @@ class Profile extends ActiveRecord
     public function getComments()
     {
         return $this->hasMany(Comment::className(), ['profile_id' => 'id'])->via('profileComment');
+    }
+
+    /**
+     * @return string
+     */
+
+
+
+    public function getCommentsProfileCount()
+    {
+        return $this->getProfileComment()->count();
+    }
+
+    public function isRemoved()
+    {
+        return $this->isRemoved;
     }
 
 }

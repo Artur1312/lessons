@@ -1,13 +1,18 @@
 <?php use yii\widgets\ActiveForm;  ?>
 
 
-    <h4>3 comments</h4>
+
+    <h4><?php echo $profile->getCommentsProfileCount(); ?> comments</h4>
 
 <?php
 
 
 if(!empty($comments)): ?>
     <?php foreach($comments as $comment):?>
+
+
+        <?php if($comment->isRemoved()): ?>
+
         <div class="media">
 
 
@@ -27,6 +32,7 @@ if(!empty($comments)): ?>
                 <p class="para"><?=$comment->text; ?></p>
             </div>
         </div>
+            <?php endif; ?>
         <!-- end bottom comment-->
     <?php endforeach; ?>
 

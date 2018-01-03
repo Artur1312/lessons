@@ -7,6 +7,7 @@ use app\models\User;
 use app\modules\orders\models\OrderInfo;
 use Yii;
 
+use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 
 /**
@@ -26,6 +27,12 @@ use yii\db\ActiveRecord;
  */
 class Comment extends ActiveRecord
 {
+    const STATUS_ALLOW = 'allw';
+    const STATUS_DISALLOW = 'dsal';
+    const REMOVE = 0;
+
+
+
     /**
      * @inheritdoc
      */
@@ -103,13 +110,27 @@ class Comment extends ActiveRecord
             ->viaTable('comment_profile', ['comment_id' => 'id']);
     }
 
-//    public function getCommentCount()
-//    {
-//        return $this->getProfile()->count();
-//    }
+
+    public function getCommentProfileCount()
+    {
+        return $this->getCommentProfile()->count();
+    }
 
     public function getProfile()
     {
         return $this->hasMany(Profile::className(), ['profile_id' => 'id'])->via('ProfileComment');
+    }
+
+
+
+    public function isRemoved()
+    {
+        return $this->isRemoved;
+    }
+
+    public function remove()
+    {
+        $this->isRemoved = self::REMOVE;
+        return $this->save(false);
     }
 }
