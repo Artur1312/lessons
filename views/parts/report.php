@@ -3,31 +3,28 @@ use yii\widgets\ActiveForm;  ?>
 
 
 
-    <?php if($profile->getCommentsProfileCount()>1): ?>
+    <?php if($orderInfo->getCommentOrderInfoCount()>1): ?>
 
-    <h4><?php echo $profile->getCommentsProfileCount(); ?> comments</h4>
+    <h4><?php echo $orderInfo->getCommentOrderInfoCount(); ?> comments</h4>
     <?php endif; ?>
-        <?php if($profile->getCommentsProfileCount()==1): ?>
-    <h4><?php echo $profile->getCommentsProfileCount(); ?> comment</h4>
+        <?php if($orderInfo->getCommentOrderInfoCount()==1): ?>
+    <h4><?php echo $orderInfo->getCommentOrderInfoCount(); ?> comment</h4>
         <?php endif; ?>
-            <?php if($profile->getCommentsProfileCount()==0): ?>
+            <?php if($orderInfo->getCommentOrderInfoCount()==0): ?>
                 <h4>There are no comments yet.</h4>
     <?php endif; ?>
-<?php
-
-
-if(!empty($comments)): ?>
+<?php if(!empty($comments)): ?>
     <?php foreach($comments as $comment):?>
 
 
         <?php if($comment->isRemoved()): ?>
 
-        <div class="alert alert-primary" data-notify="container">
+        <div class="media">
 
 
-<!--            <div class="comment-img">-->
+            <div class="comment-img">
 <!--              <img width="70px" class="img-circle" src="--><?//= //$comment->user->image; ?><!--" alt="">-->
-<!--            </div>-->
+            </div>
 
             <div class="comment-text">
 
@@ -50,7 +47,7 @@ if(!empty($comments)): ?>
     <div class="leave-comment">
 
         <?php $form = ActiveForm::begin([
-            'action'=>['profile/comment', 'id'=>$profile->id],
+            'action'=>['info/comment', 'id'=>$orderInfo->id],
             'options'=>['class'=>'form-horizontal contact-form', 'role'=>'form']
         ])?>
         <div class="form-group">

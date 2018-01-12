@@ -2,7 +2,7 @@
 
 namespace app\modules\orders\models;
 
-use app\models\Comment;
+use app\modules\comment\models\Comment;
 use app\modules\comment\models\CommentOrderInfo;
 use app\modules\tutors\models\TutorType;
 use app\models\User;
@@ -85,11 +85,11 @@ class OrderInfo extends ActiveRecord
         return [
             'id' => 'ID',
             'create_time' => 'Create Time',
-            'client_id' => 'Client ID',
-            'product_id' => 'Product ID',
+            'client_id' => 'Client',
+            'product_id' => 'Product',
             'current_level' => 'Current Level',
-            'course_id' => 'Course ID',
-            'tutor_type_id' => 'Tutor Type ID',
+            'course_id' => 'Course',
+            'tutor_type_id' => 'Tutor Type',
             'tutor_experience' => 'Tutor Experience',
             'connect_method' => 'Connect Method',
             'connect_time' => 'Connect Time',
@@ -110,23 +110,41 @@ class OrderInfo extends ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCommentOrderInfos()
+//    public function getCommentOrderInfo()
+//    {
+//        return $this->hasMany(CommentOrderInfo::className(), ['order_info_id' => 'id']);
+//    }
+
+    public function getCommentOrderInfo()
     {
-        return $this->hasMany(CommentOrderInfo::className(), ['order_info_id' => 'id']);
+        return $this->hasMany(Comment::className(), ['id' => 'comment_id'])
+        ->viaTable('comment_order_info', ['order_info_id' => 'id']);
     }
+
+    public function getCommentsOrderInfo()
+    {
+        return $this->getCommentOrderInfo()->all();
+    }
+
 
     /**
      * @return \yii\db\ActiveQuery
      */
+//    public function getComments()
+//    {
+//        return $this->hasMany(Comment::className(), ['id' => 'comment_id'])->viaTable('comment_order_info', ['order_info_id' => 'id']);
+//    }
+
     public function getComments()
     {
-        return $this->hasMany(Comment::className(), ['id' => 'comment_id'])->viaTable('comment_order_info', ['order_info_id' => 'id']);
+        return $this->hasMany(Comment::className(), ['profile_id' => 'id'])->via('orderInfoComment');
     }
+
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getClient()
+    public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'client_id']);
     }
@@ -184,5 +202,13 @@ class OrderInfo extends ActiveRecord
         $this->isRemoved = self::REMOVE;
         return $this->save(false);
     }
+
+
+    public function getCommentOrderInfoCount()
+    {
+        return $this->getCommentOrderInfo()->where('isRemoved=1')->count();
+
+    }
+
 
 }

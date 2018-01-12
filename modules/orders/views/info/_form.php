@@ -1,10 +1,13 @@
 <?php
 
-use diiimonn\widgets\CheckboxMultiple;
+use app\models\User;
+use app\modules\course\models\Course;
+use app\modules\tutors\models\TutorType;
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-
+use yii\helpers\ArrayHelper;
+use app\modules\profile\models\Profile;
+use app\modules\product\models\Product;
 /* @var $this yii\web\View */
 /* @var $model app\modules\orders\models\OrderInfo */
 /* @var $form yii\widgets\ActiveForm */
@@ -16,15 +19,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'create_time')->textInput() ?>
 
-    <?= $form->field($model, 'client_id')->textInput() ?>
+    <?= $form->field($model, 'client_id')->dropDownList(ArrayHelper::map(User::find()->all(), 'id', 'username'), ['prompt'=>'Select User'])?>
 
-    <?= $form->field($model, 'product_id')->textInput() ?>
+    <?= $form->field($model, 'product_id')->dropDownList(ArrayHelper::map(Product::find()->all(), 'id', 'name'), ['prompt'=>'Select Product']) ?>
 
     <?= $form->field($model, 'current_level')->textInput() ?>
 
-    <?= $form->field($model, 'course_id')->textInput() ?>
+    <?= $form->field($model, 'course_id')->dropDownList(ArrayHelper::map(Course::find()->all(), 'id', 'name'), ['prompt'=>'Select Course']) ?>
 
-    <?= $form->field($model, 'tutor_type_id')->textInput() ?>
+    <?= $form->field($model, 'tutor_type_id')->dropDownList(ArrayHelper::map(TutorType::find()->all(), 'id', 'name'), ['prompt'=>'Select a Type']) ?>
 
     <?= $form->field($model, 'tutor_experience')->textInput() ?>
 
@@ -35,7 +38,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'frequence')->textInput() ?>
 
     <?= $form->field($model, 'free_days')->textInput() ?>
-
 
     <?= $form->field($model, 'free_times')->textInput() ?>
 
@@ -56,16 +58,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'order_comment')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
-
-
-    <?php
-
-
-
-    ?>
 
 </div>

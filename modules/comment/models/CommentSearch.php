@@ -65,6 +65,8 @@ class CommentSearch extends Comment
             'isRemoved' => $this->isRemoved,
         ]);
 
+
+
         $query->where('isRemoved=1');
 
         $query->andFilterWhere(['like', 'text', $this->text]);

@@ -1,17 +1,12 @@
 /*!
-
  =========================================================
  * Light Bootstrap Dashboard - v2.0.1 (Bootstrap 4)
  =========================================================
-
  * Product Page: http://www.creative-tim.com/product/light-bootstrap-dashboard
  * Copyright 2017 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
-
  =========================================================
-
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
  */
 
 /*      light colors         */
@@ -1761,7 +1756,7 @@ fieldset[disabled] .form-control {
 }
 
 .alert-info {
-    background-color: #63d8f1;
+    background-color: #9368e9;
 }
 
 .alert-success {
@@ -2451,7 +2446,6 @@ fieldset[disabled] .form-control {
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
-
 Copyright (c) 2015 Daniel Eden
 */
 
@@ -3090,62 +3084,62 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .ct-label.ct-horizontal.ct-start {
-    -webkit-box-align: flex-end;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    -webkit-box-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
+    /*-webkit-box-align: flex-end;*/
+    /*-webkit-align-items: flex-end;*/
+    /*-ms-flex-align: flex-end;*/
+    /*align-items: flex-end;*/
+    /*-webkit-box-pack: flex-start;*/
+    /*-webkit-justify-content: flex-start;*/
+    /*-ms-flex-pack: flex-start;*/
+    /*justify-content: flex-start;*/
     text-align: left;
     text-anchor: start;
 }
 
 .ct-label.ct-horizontal.ct-end {
-    -webkit-box-align: flex-start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: flex-start;
-    align-items: flex-start;
-    -webkit-box-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
+    /*-webkit-box-align: flex-start;*/
+    /*-webkit-align-items: flex-start;*/
+    /*-ms-flex-align: flex-start;*/
+    /*align-items: flex-start;*/
+    /*-webkit-box-pack: flex-start;*/
+    /*-webkit-justify-content: flex-start;*/
+    /*-ms-flex-pack: flex-start;*/
+    /*justify-content: flex-start;*/
     text-align: left;
     text-anchor: start;
 }
 
 .ct-label.ct-vertical.ct-start {
-    -webkit-box-align: flex-end;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    -webkit-box-pack: flex-end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: flex-end;
-    justify-content: flex-end;
+    /*-webkit-box-align: flex-end;*/
+    /*-webkit-align-items: flex-end;*/
+    /*-ms-flex-align: flex-end;*/
+    /*align-items: flex-end;*/
+    /*-webkit-box-pack: flex-end;*/
+    /*-webkit-justify-content: flex-end;*/
+    /*-ms-flex-pack: flex-end;*/
+    /*justify-content: flex-end;*/
     text-align: right;
     text-anchor: end;
 }
 
 .ct-label.ct-vertical.ct-end {
-    -webkit-box-align: flex-end;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    -webkit-box-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
+    /*-webkit-box-align: flex-end;*/
+    /*-webkit-align-items: flex-end;*/
+    /*-ms-flex-align: flex-end;*/
+    /*align-items: flex-end;*/
+    /*-webkit-box-pack: flex-start;*/
+    /*-webkit-justify-content: flex-start;*/
+    /*-ms-flex-pack: flex-start;*/
+    /*justify-content: flex-start;*/
     text-align: left;
     text-anchor: start;
 }
 
 .ct-chart-bar .ct-label.ct-horizontal.ct-start {
-    -webkit-box-align: flex-end;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
+    /*-webkit-box-align: flex-end;*/
+    /*-webkit-align-items: flex-end;*/
+    /*-ms-flex-align: flex-end;*/
+    /*align-items: flex-end;*/
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -3155,10 +3149,10 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .ct-chart-bar .ct-label.ct-horizontal.ct-end {
-    -webkit-box-align: flex-start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: flex-start;
-    align-items: flex-start;
+    /*!*-webkit-box-align: flex-start;*!*/
+    /*-webkit-align-items: flex-start;*/
+    /*!*-ms-flex-align: flex-start;*!*/
+    /*align-items: flex-start;*/
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -3168,27 +3162,27 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-start {
-    -webkit-box-align: flex-end;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: flex-end;
-    align-items: flex-end;
-    -webkit-box-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
+    /*!*-webkit-box-align: flex-end;*!*/
+    /*-webkit-align-items: flex-end;*/
+    /*!*-ms-flex-align: flex-end;*!*/
+    /*align-items: flex-end;*/
+    /*!*-webkit-box-pack: flex-start;*!*/
+    /*-webkit-justify-content: flex-start;*/
+    /*!*-ms-flex-pack: flex-start;*!*/
+    /*justify-content: flex-start;*/
     text-align: left;
     text-anchor: start;
 }
 
 .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end {
-    -webkit-box-align: flex-start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: flex-start;
-    align-items: flex-start;
-    -webkit-box-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
+    /*-webkit-box-align: flex-start;*/
+    /*-webkit-align-items: flex-start;*/
+    /*-ms-flex-align: flex-start;*/
+    /*align-items: flex-start;*/
+    /*-webkit-box-pack: flex-start;*/
+    /*-webkit-justify-content: flex-start;*/
+    /*-ms-flex-pack: flex-start;*/
+    /*justify-content: flex-start;*/
     text-align: left;
     text-anchor: start;
 }
@@ -3198,10 +3192,10 @@ Copyright (c) 2015 Daniel Eden
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: flex-end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: flex-end;
-    justify-content: flex-end;
+    /*!*-webkit-box-pack: flex-end;*!*/
+    /*-webkit-justify-content: flex-end;*/
+    /*-ms-flex-pack: flex-end;*/
+    /*justify-content: flex-end;*/
     text-align: right;
     text-anchor: end;
 }
@@ -3211,10 +3205,10 @@ Copyright (c) 2015 Daniel Eden
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: flex-start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
+    /*-webkit-box-pack: flex-start;*/
+    /*-webkit-justify-content: flex-start;*/
+    /*-ms-flex-pack: flex-start;*/
+    /*justify-content: flex-start;*/
     text-align: left;
     text-anchor: end;
 }
@@ -4304,7 +4298,7 @@ Copyright (c) 2015 Daniel Eden
         }
         100% {
             top: 0px;
-            transform: rotate(0);
+            transform: rotate(-0.001deg);
         }
     }
     @-webkit-keyframes topbar-back {
@@ -4320,7 +4314,7 @@ Copyright (c) 2015 Daniel Eden
         }
         100% {
             top: 0px;
-            -webkit-transform: rotate(0);
+            -webkit-transform: rotate(-0.001deg);
         }
     }
     @-moz-keyframes topbar-back {
@@ -4336,7 +4330,7 @@ Copyright (c) 2015 Daniel Eden
         }
         100% {
             top: 0px;
-            -moz-transform: rotate(0);
+            -moz-transform: rotate(-0.001deg);
         }
     }
     @keyframes bottombar-x {
@@ -4400,7 +4394,7 @@ Copyright (c) 2015 Daniel Eden
         }
         100% {
             bottom: 0px;
-            transform: rotate(0);
+            transform: rotate(-0.001deg);
         }
     }
     @-webkit-keyframes bottombar-back {
@@ -4416,7 +4410,7 @@ Copyright (c) 2015 Daniel Eden
         }
         100% {
             bottom: 0px;
-            -webkit-transform: rotate(0);
+            -webkit-transform: rotate(-0.001deg);
         }
     }
     @-moz-keyframes bottombar-back {
@@ -4432,7 +4426,7 @@ Copyright (c) 2015 Daniel Eden
         }
         100% {
             bottom: 0px;
-            -moz-transform: rotate(0);
+            -moz-transform: rotate(-0.001deg);
         }
     }
     @-webkit-keyframes fadeIn {
@@ -4735,10 +4729,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 /*--------------------------------
-
 nucleo-icons Web Font - built using nucleoapp.com
 License - nucleoapp.com/license/
-
 -------------------------------- */
 
 @font-face {

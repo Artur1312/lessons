@@ -1,19 +1,18 @@
 <?php
 
-namespace app\modules\orders\controllers;
+namespace app\modules\profile\controllers;
 
 use app\models\form\CommentForm;
 use Yii;
-use app\modules\orders\models\OrderInfo;
-use app\modules\orders\models\OrderInfoSearch;
+use app\modules\profile\models\Profile;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * InfoController implements the CRUD actions for OrderInfo model.
+ * ProfileController implements the CRUD actions for Profile model.
  */
-class InfoController extends Controller
+class ProfileController extends Controller
 {
     /**
      * @inheritdoc
@@ -31,65 +30,73 @@ class InfoController extends Controller
     }
 
     /**
-     * Lists all OrderInfo models.
+     * Lists all Profile models.
      * @return mixed
      */
+//    public function actionIndex()
+//    {
+//        $searchModel = new ProfileSearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//
+//        return $this->render('index', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
+//    }
+
     public function actionIndex()
     {
-        $searchModel = new OrderInfoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $profiles = Profile::find()->orderBy('id asc')->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'profiles' => $profiles,
         ]);
     }
 
+
     /**
-     * Displays a single OrderInfo model.
+     * Displays a single Profile model.
      * @param integer $id
      * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
      */
-
     public function actionView($id)
     {
-        $orderInfo = OrderInfo::findOne($id);
+        $profile = Profile::findOne($id);
 
-        $comments = $orderInfo->getCommentsOrderInfo();
+        $comments = $profile->getProfileComments();
         $commentForm = new CommentForm;
         return $this->render('view', [
             'model' => $this->findModel($id),
             'comments' => $comments,
-            'orderInfo' =>  $orderInfo,
+            'profile' => $profile,
             'commentForm' => $commentForm
         ]);
     }
 
     /**
-     * Creates a new OrderInfo model.
+     * Creates a new Profile model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new OrderInfo();
+        $model = new Profile();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**
-     * Updates an existing OrderInfo model.
+     * Updates an existing Profile model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
     {
@@ -97,19 +104,18 @@ class InfoController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
         }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
     }
 
     /**
-     * Deletes an existing OrderInfo model.
+     * Deletes an existing Profile model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
     {
@@ -119,21 +125,20 @@ class InfoController extends Controller
     }
 
     /**
-     * Finds the OrderInfo model based on its primary key value.
+     * Finds the Profile model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return OrderInfo the loaded model
+     * @return Profile the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = OrderInfo::findOne($id)) !== null) {
+        if (($model = Profile::findOne($id)) !== null) {
             return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
         }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
     }
-
 
     public function actionComment($id)
     {
@@ -143,12 +148,13 @@ class InfoController extends Controller
         {
             $model->load(Yii::$app->request->post());
 
-            if($model->saveOrderComment($id))
+            if($model->saveProfileComment($id))
             {
-                return $this->redirect(['info/view', 'id'=>$id]);
+                return $this->redirect(['profile/view', 'id'=>$id]);
 //                return var_dump($model);
             }
-            return $this->redirect(['info/view', 'id'=>$id]);
+            return $this->redirect(['profile/view', 'id'=>$id]);
         }
     }
+
 }

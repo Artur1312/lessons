@@ -2,6 +2,7 @@
 
 namespace app\modules\comment\models;
 
+use app\modules\orders\models\OrderInfo;
 use Yii;
 
 /**

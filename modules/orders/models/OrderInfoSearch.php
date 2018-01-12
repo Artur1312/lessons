@@ -2,13 +2,13 @@
 
 namespace app\modules\orders\models;
 
-
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-
+use app\modules\orders\models\OrderInfo;
 
 /**
- * OrderInfoSearch represents the model behind the search form about `app\modules\order_info\models\OrderInfo`.
+ * OrderInfoSearch represents the model behind the search form of `app\modules\orders\models\OrderInfo`.
  */
 class OrderInfoSearch extends OrderInfo
 {
@@ -18,7 +18,7 @@ class OrderInfoSearch extends OrderInfo
     public function rules()
     {
         return [
-            [['id', 'client_id', 'product_id', 'current_level', 'course_id', 'tutor_type_id', 'tutor_experience', 'connect_method', 'connect_time', 'frequence', 'goal', 'demo_total', 'demo_like', 'demo_dislike', 'demo_absent', 'demo_reject'], 'integer'],
+            [['id', 'client_id', 'product_id', 'current_level', 'course_id', 'tutor_type_id', 'tutor_experience', 'connect_method', 'connect_time', 'frequence', 'goal', 'demo_total', 'demo_like', 'demo_dislike', 'demo_absent', 'demo_reject', 'isRemoved'], 'integer'],
             [['create_time', 'free_days', 'free_times', 'order_status', 'order_comment'], 'safe'],
         ];
     }
@@ -76,6 +76,7 @@ class OrderInfoSearch extends OrderInfo
             'demo_dislike' => $this->demo_dislike,
             'demo_absent' => $this->demo_absent,
             'demo_reject' => $this->demo_reject,
+            'isRemoved' => $this->isRemoved,
         ]);
 
         $query->andFilterWhere(['like', 'free_days', $this->free_days])

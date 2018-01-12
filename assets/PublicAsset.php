@@ -18,24 +18,33 @@ class PublicAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/bootstrap.min.css',
-        'css/light-bootstrap-dashboard.css',
-        'css/demo.css',
-        '//fonts.googleapis.com/css?family=Montserrat:400,700,200',
-        '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css'
 
+        'css/comment.css',
+        'css/demo.css',
+
+        'css/light-bootstrap-dashboard.css',
+
+
+        '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css',
+'//fonts.googleapis.com/css?family=Montserrat:400,700,200',
     ];
     public $js = [
-        'js/bootstrap.min.js',
+        'js/bootstrap.js',
         'js/light-bootstrap-dashboard.js',
-        'js/demo.js',
+        'js/plugins/bootstrap-switch.js',
+        'js/plugins/bootstrap-notify.js',
+        'js/plugins/bootstrap-datepicker.js',
+        'js/plugins/nouislider.min.js',
         'js/main.js',
+        'js/demo.js',
+
         //for modal structure
         'js/modals/modal.js',
         'js/modals/modal1.js',
         'js/modals/modal2.js',
         'js/modals/modal3.js',
         //end module structure
-//        'js/jquery-3.2.1.min.js',
+
 
     ];
 

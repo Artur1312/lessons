@@ -15,9 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn waves-effect waves-light  cyan darken-2']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn waves-effect waves-light red darken-4',
+            'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
@@ -49,7 +49,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'demo_reject',
             'order_status',
             'order_comment',
+            'isRemoved',
         ],
     ]) ?>
+    <?= $this->render('//parts/report',
+        [
+            'orderInfo' => $orderInfo,
+            'comments' => $comments,
+            'commentForm' => $commentForm
+        ]);  ?>
+
+
+
 
 </div>

@@ -32,14 +32,14 @@ if (typeof jQuery === 'undefined') {
   // ============================================================
 
   function transitionEnd() {
-    var el = document.createElement('bootstrap')
+    var el = document.createElement('bootstrap');
 
     var transEndEventNames = {
       WebkitTransition : 'webkitTransitionEnd',
       MozTransition    : 'transitionend',
       OTransition      : 'oTransitionEnd otransitionend',
       transition       : 'transitionend'
-    }
+    };
 
     for (var name in transEndEventNames) {
       if (el.style[name] !== undefined) {
@@ -47,18 +47,18 @@ if (typeof jQuery === 'undefined') {
       }
     }
 
-    return false // explicit for ie8 (  ._.)
+    return false; // explicit for ie8 (  ._.)
   }
 
   // http://blog.alexmaccaw.com/css-transitions
   $.fn.emulateTransitionEnd = function (duration) {
-    var called = false
-    var $el = this
-    $(this).one('bsTransitionEnd', function () { called = true })
-    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
-    setTimeout(callback, duration)
+    var called = false;
+    var $el = this;
+    $(this).one('bsTransitionEnd', function () { called = true });
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) };
+    setTimeout(callback, duration);
     return this
-  }
+  };
 
   $(function () {
     $.support.transition = transitionEnd()
@@ -91,37 +91,37 @@ if (typeof jQuery === 'undefined') {
   // ALERT CLASS DEFINITION
   // ======================
 
-  var dismiss = '[data-dismiss="alert"]'
+  var dismiss = '[data-dismiss="alert"]';
   var Alert   = function (el) {
     $(el).on('click', dismiss, this.close)
-  }
+  };
 
-  Alert.VERSION = '3.3.7'
+  Alert.VERSION = '3.3.7';
 
-  Alert.TRANSITION_DURATION = 150
+  Alert.TRANSITION_DURATION = 150;
 
   Alert.prototype.close = function (e) {
-    var $this    = $(this)
-    var selector = $this.attr('data-target')
+    var $this    = $(this);
+    var selector = $this.attr('data-target');
 
     if (!selector) {
-      selector = $this.attr('href')
-      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+      selector = $this.attr('href');
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); // strip for ie7
     }
 
-    var $parent = $(selector === '#' ? [] : selector)
+    var $parent = $(selector === '#' ? [] : selector);
 
-    if (e) e.preventDefault()
+    if (e) e.preventDefault();
 
     if (!$parent.length) {
       $parent = $this.closest('.alert')
     }
 
-    $parent.trigger(e = $.Event('close.bs.alert'))
+    $parent.trigger(e = $.Event('close.bs.alert'));
 
-    if (e.isDefaultPrevented()) return
+    if (e.isDefaultPrevented()) return;
 
-    $parent.removeClass('in')
+    $parent.removeClass('in');
 
     function removeElement() {
       // detach from parent, fire event then clean up data
@@ -133,7 +133,7 @@ if (typeof jQuery === 'undefined') {
         .one('bsTransitionEnd', removeElement)
         .emulateTransitionEnd(Alert.TRANSITION_DURATION) :
       removeElement()
-  }
+  };
 
 
   // ALERT PLUGIN DEFINITION
@@ -141,27 +141,27 @@ if (typeof jQuery === 'undefined') {
 
   function Plugin(option) {
     return this.each(function () {
-      var $this = $(this)
-      var data  = $this.data('bs.alert')
+      var $this = $(this);
+      var data  = $this.data('bs.alert');
 
-      if (!data) $this.data('bs.alert', (data = new Alert(this)))
+      if (!data) $this.data('bs.alert', (data = new Alert(this)));
       if (typeof option == 'string') data[option].call($this)
     })
   }
 
-  var old = $.fn.alert
+  var old = $.fn.alert;
 
-  $.fn.alert             = Plugin
-  $.fn.alert.Constructor = Alert
+  $.fn.alert             = Plugin;
+  $.fn.alert.Constructor = Alert;
 
 
   // ALERT NO CONFLICT
   // =================
 
   $.fn.alert.noConflict = function () {
-    $.fn.alert = old
+    $.fn.alert = old;
     return this
-  }
+  };
 
 
   // ALERT DATA-API
@@ -187,33 +187,33 @@ if (typeof jQuery === 'undefined') {
   // ==============================
 
   var Button = function (element, options) {
-    this.$element  = $(element)
-    this.options   = $.extend({}, Button.DEFAULTS, options)
-    this.isLoading = false
-  }
+    this.$element  = $(element);
+    this.options   = $.extend({}, Button.DEFAULTS, options);
+    this.isLoading = false;
+  };
 
-  Button.VERSION  = '3.3.7'
+  Button.VERSION  = '3.3.7';
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
-  }
+  };
 
   Button.prototype.setState = function (state) {
-    var d    = 'disabled'
-    var $el  = this.$element
-    var val  = $el.is('input') ? 'val' : 'html'
-    var data = $el.data()
+    var d    = 'disabled';
+    var $el  = this.$element;
+    var val  = $el.is('input') ? 'val' : 'html';
+    var data = $el.data();
 
-    state += 'Text'
+    state += 'Text';
 
-    if (data.resetText == null) $el.data('resetText', $el[val]())
+    if (data.resetText == null) $el.data('resetText', $el[val]());
 
     // push to event loop to allow forms to submit
     setTimeout($.proxy(function () {
-      $el[val](data[state] == null ? this.options[state] : data[state])
+      $el[val](data[state] == null ? this.options[state] : data[state]);
 
       if (state == 'loadingText') {
-        this.isLoading = true
+        this.isLoading = true;
         $el.addClass(d).attr(d, d).prop(d, true)
       } else if (this.isLoading) {
         this.isLoading = false

@@ -8,7 +8,7 @@ use app\modules\wallet\models\Wallet;
 use Yii;
 use app\modules\comment\models\Comment;
 use yii\db\ActiveRecord;
-
+use yii\db\Query;
 
 
 /**
@@ -123,11 +123,11 @@ class Profile extends ActiveRecord
      * @return string
      */
 
-
-
     public function getCommentsProfileCount()
     {
-        return $this->getProfileComment()->count();
+
+        return $this->getProfileComment()->where('isRemoved=1')->count();
+
     }
 
     public function isRemoved()
