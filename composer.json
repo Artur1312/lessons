@@ -24,7 +24,8 @@
         "diiimonn/yii2-widget-checkbox-multiple": "dev-master",
         "macgyer/yii2-materializecss": "*",
         "yii2mod/yii2-comments": "*",
-        "2amigos/yii2-date-picker-widget": "~1.0"
+        "2amigos/yii2-date-picker-widget": "~1.0",
+        "philippfrenzel/yii2fullcalendar": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

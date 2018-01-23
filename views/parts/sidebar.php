@@ -78,10 +78,14 @@ Tip 2: you can also add an image using data-image tag
                     <p>Comments</p>
                 </a>
             </li>
+            <li>
+                <a class="nav-link" href="<?=  Url::toRoute(['/events/index'])?>">
+                    <i class="nc-icon nc-bell-55"></i>
+                    <p>Events</p>
+                </a>
+            </li>
             <?php if(Yii::$app->user->isGuest):?>
                 <li>
-
-
                     <a class="nav-link" href="<?= Url::toRoute(['auth/login'])?>">
                         <i class="nc-icon nc-bell-55"></i>Login
                     </a>
